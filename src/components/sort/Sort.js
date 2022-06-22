@@ -20,10 +20,10 @@ function Sort() {
         <span>популярности</span>
       </div>
       <div className="sort__popup">
-        <ul>
-          <li className="active">популярности</li>
-          <li>цене</li>
-          <li>алфавиту</li>
+        <ul className="values">
+          <li className="value active">популярности</li>
+          <li className="value">цене</li>
+          <li className="value">алфавиту</li>
         </ul>
       </div>
     </section>
