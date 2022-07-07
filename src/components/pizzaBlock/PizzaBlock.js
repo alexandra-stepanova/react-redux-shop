@@ -8,12 +8,7 @@ function PizzaBlock() {
       {pizzas.map((pizza) => {
         return (
           <Pizza
-            key={pizza.id}
-            name={pizza.name}
-            image={pizza.imageUrl}
-            sizes={pizza.sizes}
-            price={pizza.price}
-            types={pizza.types}
+            {...pizza}
           />
         );
       })}
