@@ -1,23 +1,21 @@
 import React from "react";
-import Catigories from "../catigories/Catigories";
+import Categories from "../categories/Categories";
 import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 
 function Main() {
   return (
     <main className="main">
-      <section class="content">
-        <div class="container">
-          <div class="content__top">
-        <Catigories />
+      <section className="content">
+        <div className="container">
+          <div className="content__top">
+        <Categories />
         <Sort />
         </div>
         </div>
       </section>
-      <h2 class="content__title">Все пиццы</h2>
-      <section class="content__items">
+      <h2 className="content__title">Все пиццы</h2>
       <PizzaBlock />
-      </section>
     </main>
   );
 }
