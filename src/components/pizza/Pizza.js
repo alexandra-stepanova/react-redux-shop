@@ -1,21 +1,21 @@
 import React from "react";
+import pizzaTypes from "../../utils/pizzaTypes";
 
-function Pizza() {
-  return <li className="pizza-block">
-      <img
-        className="pizza-block__image"
-        src={imageUrl} alt="Pizza"
-      />
-      <h4 className="pizza-block__title">{title}</h4>
+function Pizza({ name, image, price, sizes, types }) {
+  return (
+    <li className="pizza-block">
+      <img className="pizza-block__image" src={image} alt="Pizza" />
+      <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
-        <ul>
-          <li className="active">{types}</li>
-          <li>{types}</li> 
+        <ul className="decoration">
+          {types.map((type) => {
+            return <li key={type.index}>{pizzaTypes[type]}</li>;
+          })}
         </ul>
-        <ul>
-          <li className="active">{sizes} см.</li>
-          <li>{sizes} см.</li>
-          <li>{sizes} см.</li>
+        <ul className="decoration">
+          {sizes.map((size) => {
+            return <li key={size.index}>{size} см</li>;
+          })}
         </ul>
       </div>
       <div className="pizza-block__bottom">
@@ -37,7 +37,8 @@ function Pizza() {
           <i>2</i>
         </div>
       </div>
-  </li>;
+    </li>
+  );
 }
 
 export default Pizza;
