@@ -6,11 +6,7 @@ function PizzaBlock() {
   return (
     <ul className="content__items">
       {pizzas.map((pizza) => {
-        return (
-          <Pizza
-            {...pizza}
-          />
-        );
+        return <Pizza key={pizza.id} {...pizza} />;
       })}
     </ul>
   );
