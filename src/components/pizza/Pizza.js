@@ -6,16 +6,16 @@ function Pizza(pizza) {
   const [activeSize, setActiveSize] = React.useState(0);
 
   return (
-    <li className="pizza-block" key={pizza.id}>
+    <li className="pizza-block">
       <img className="pizza-block__image" src={pizza.imageUrl} alt="Pizza" />
       <h4 className="pizza-block__title">{pizza.name}</h4>
       <div className="pizza-block__selector">
         <ul className="decoration">
-          {pizza.types.map((type) => {
+          {pizza.types.map((type, index) => {
             return (
               <li
                 onClick={() => setActiveType(type)}
-                key={type.index}
+                key={index}
                 className={`type ${activeType === type ? "active" : ""}`}
               >
                 {pizzaTypes[type]}
@@ -28,7 +28,7 @@ function Pizza(pizza) {
             return (
               <li
                 onClick={() => setActiveSize(index)}
-                key={size.index}
+                key={index}
                 className={`type ${activeSize === index ? "active" : ""}`}
               >
                 {size} см
