@@ -6,13 +6,12 @@ class Api {
 
   _handleResponse(res) {
     if (res.ok) {
-      console.log(JSON.parse("res"));
       return res.json();
     }
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getUserInfo() {
+  getPizzas() {
     return fetch(`${this._url}/items`, {
       method: "GET",
       headers: this._headers,
