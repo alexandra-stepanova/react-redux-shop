@@ -1,16 +1,12 @@
 import React from "react";
 import Pizza from "../pizza/Pizza";
-import Preloader from "../preloader/Preloader";
+import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
 
 function PizzaBlock({ pizzas, isLoading }) {
   return (
     <ul className="content__items">
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        pizzas.map((pizza) => {
-          return <Pizza key={pizza.id} {...pizza} />;
-        })
+      {pizzas.map((pizza) =>
+        isLoading ? <PizzaSkeleton key={pizza.id} /> : <Pizza key={pizza.id} {...pizza} />
       )}
     </ul>
   );

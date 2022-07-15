@@ -17,7 +17,7 @@ function App() {
         setPizzas(response);
       })
       .catch((error) => console.log("error", error))
-      .finally(() => setTimeout(() => setIsLoading(false), 500));
+      .finally(() => setTimeout(() => setIsLoading(false), 600));
   }, []);
 
   return (
