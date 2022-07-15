@@ -1,6 +1,6 @@
 import React from "react";
 import Pizza from "../pizza/Pizza";
-import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
+import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton"
 
 function PizzaBlock({ pizzas, isLoading }) {
   return (
