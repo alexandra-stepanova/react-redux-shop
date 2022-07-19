@@ -11,11 +11,16 @@ class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getPizzas() {
-    return fetch(`${this._url}/items`, {
-      method: "GET",
-      headers: this._headers,
-    }).then(this._handleResponse);
+  getPizzas(categoryId, sortProperty) {
+    return fetch(
+      `${this._url}/items?${
+        categoryId > 0 ? `category=${categoryId}` : ""
+      }&sortBy=${sortProperty}&order=desc`,
+      {
+        method: "GET",
+        headers: this._headers,
+      }
+    ).then(this._handleResponse);
   }
 }
 
