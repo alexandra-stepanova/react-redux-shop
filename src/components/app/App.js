@@ -30,7 +30,7 @@ function App() {
           path="/"
           element={<Main pizzas={pizzas} isLoading={isLoading} />}
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart pizzas={pizzas}/>} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>

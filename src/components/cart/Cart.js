@@ -1,10 +1,9 @@
 import React from "react";
-import EmptyCard from "../emptyCard/EmptyCard";
+import EmptyCard from "../emptyCart/EmptyCart";
+import FullCart from "../fullCart/FullCart";
 
-function Cart() {
-    return(
-        <EmptyCard />
-    )
+function Cart({ pizzas }) {
+  return !pizzas.length ? <EmptyCard /> : <FullCart pizzas={pizzas} />;
 }
 
 export default Cart;
