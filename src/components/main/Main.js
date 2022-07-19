@@ -3,7 +3,14 @@ import Categories from "../categories/Categories";
 import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 
-function Main({ pizzas, isLoading, categoryId, onClickCategory }) {
+function Main({
+  pizzas,
+  isLoading,
+  categoryId,
+  onClickCategory,
+  sortType,
+  onClickType,
+}) {
   return (
     <main className="main">
       <section className="content">
@@ -13,7 +20,7 @@ function Main({ pizzas, isLoading, categoryId, onClickCategory }) {
               categoryId={categoryId}
               onClickCategory={onClickCategory}
             />
-            <Sort />
+            <Sort sortType={sortType} onClickType={onClickType} />
           </div>
         </div>
       </section>
