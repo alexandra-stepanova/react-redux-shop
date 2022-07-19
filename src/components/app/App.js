@@ -11,18 +11,23 @@ function App() {
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [categoryId, setCategoryId] = React.useState(0);
-  //const [sortType, setSortType] = React.useState(0);
+  const [sortType, setSortType] = React.useState({
+    name: "популярности",
+    sortProperty: "rating",
+  });
+
+  let sortProperty = sortType.sortProperty;
 
   React.useEffect(() => {
     setIsLoading(true);
     api
-      .getPizzas()
+      .getPizzas(categoryId, sortProperty)
       .then((response) => {
         setPizzas(response);
       })
       .catch((error) => console.log("error", error))
       .finally(() => setTimeout(() => setIsLoading(false), 600));
-  }, []);
+  }, [categoryId, sortProperty]);
 
   return (
     <div className="app">
@@ -36,6 +41,8 @@ function App() {
               isLoading={isLoading}
               categoryId={categoryId}
               onClickCategory={(index) => setCategoryId(index)}
+              sortType={sortType}
+              onClickType={(index) => setSortType(index)}
             />
           }
         />

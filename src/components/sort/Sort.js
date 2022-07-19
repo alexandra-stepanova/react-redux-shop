@@ -1,13 +1,11 @@
 import React from "react";
 import values from "../../utils/values";
 
-function Sort() {
+function Sort({ onClickType, sortType }) {
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
-  const [selected, setSelected] = React.useState(0);
-  const sortName = values[selected];
 
   const handlerOnOpen = (index) => {
-    setSelected(index);
+    onClickType(index);
     setIsOpenPopup(false);
   };
   return (
@@ -26,7 +24,9 @@ function Sort() {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsOpenPopup(!isOpenPopup)}>{sortName}</span>
+        <span onClick={() => setIsOpenPopup(!isOpenPopup)}>
+          {sortType.name}
+        </span>
       </div>
       {isOpenPopup ? (
         <div className="sort__popup">
@@ -34,11 +34,13 @@ function Sort() {
             {values.map((value, index) => {
               return (
                 <li
-                  className={`value ${selected === index ? "active" : ""}`}
+                  className={`value ${
+                    sortType.sortProperty === value.sortProperty ? "active" : ""
+                  }`}
                   key={index}
-                  onClick={() => handlerOnOpen(index)}
+                  onClick={() => handlerOnOpen(value)}
                 >
-                  {value}
+                  {value.name}
                 </li>
               );
             })}
