@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "../header/Header";
 import Main from "../main/Main";
 import Cart from "../cart/Cart";
+import NotFound from "../notFound/NotFound";
+
 import api from "../../utils/api";
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
           element={<Main pizzas={pizzas} isLoading={isLoading} />}
         />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
   );
