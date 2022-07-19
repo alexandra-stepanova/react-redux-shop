@@ -1,18 +1,16 @@
 import React from "react";
 import categories from "../../utils/categories";
 
-function Catigories() {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-
+function Catigories({ categoryId, onClickCategory }) {
   return (
     <section className="categories">
       <ul className="types">
         {categories.map((categorie, index) => {
           return (
             <li
-              onClick={() => setActiveIndex(index)}
+              onClick={() => onClickCategory(index)}
               key={index}
-              className={`type ${activeIndex === index ? "active" : ""}`}
+              className={`type ${categoryId === index ? "active" : ""}`}
             >
               {categorie}
             </li>

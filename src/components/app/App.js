@@ -10,6 +10,8 @@ import api from "../../utils/api";
 function App() {
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [categoryId, setCategoryId] = React.useState(0);
+  //const [sortType, setSortType] = React.useState(0);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -28,9 +30,16 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Main pizzas={pizzas} isLoading={isLoading} />}
+          element={
+            <Main
+              pizzas={pizzas}
+              isLoading={isLoading}
+              categoryId={categoryId}
+              onClickCategory={(index) => setCategoryId(index)}
+            />
+          }
         />
-        <Route path="/cart" element={<Cart pizzas={pizzas}/>} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
