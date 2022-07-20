@@ -9,7 +9,7 @@ function Sort({ onClickType, sortType }) {
     setIsOpenPopup(false);
   };
   return (
-    <section className="sort">
+    <div className="sort">
       <div className="sort__label">
         <svg
           width="10"
@@ -47,7 +47,7 @@ function Sort({ onClickType, sortType }) {
           </ul>
         </div>
       ) : null}
-    </section>
+    </div>
   );
 }
 

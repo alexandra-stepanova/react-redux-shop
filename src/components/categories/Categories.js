@@ -3,7 +3,7 @@ import categories from "../../utils/categories";
 
 function Catigories({ categoryId, onClickCategory }) {
   return (
-    <section className="categories">
+    <div className="categories">
       <ul className="types">
         {categories.map((categorie, index) => {
           return (
@@ -17,7 +17,7 @@ function Catigories({ categoryId, onClickCategory }) {
           );
         })}
       </ul>
-    </section>
+    </div>
   );
 }
 
