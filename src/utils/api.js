@@ -14,8 +14,11 @@ class Api {
   getPizzas(categoryId, sortProperty) {
     return fetch(
       `${this._url}/items?${
-        categoryId > 0 ? `category=${categoryId}` : ""
-      }&sortBy=${sortProperty}&order=desc`,
+        categoryId > 0 ? `category=${categoryId}` : "" //сортировку по типу
+      }&sortBy=${sortProperty.replace("-", "")}&order=${
+        //сортировка по убыванию/повышению цены, популярности, по алфавиту
+        sortProperty.includes("-") ? "asc" : "desc"
+      }`,
       {
         method: "GET",
         headers: this._headers,
