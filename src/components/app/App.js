@@ -15,6 +15,7 @@ function App() {
     name: "популярности",
     sortProperty: "rating",
   });
+  const [searchValue, setSearchValue] = React.useState("");
 
   let sortProperty = sortType.sortProperty;
 
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} />
       <Routes>
         <Route
           path="/"
@@ -43,6 +44,7 @@ function App() {
               onClickCategory={(index) => setCategoryId(index)}
               sortType={sortType}
               onClickType={(index) => setSortType(index)}
+              searchValue={searchValue}
             />
           }
         />

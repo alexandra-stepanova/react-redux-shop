@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
+import Search from "../search/Search";
 import pizza from "../../assets/images/pizza-logo.svg";
 
-function Headers() {
+function Headers({ searchValue, setSearchValue }) {
   let location = useLocation().pathname;
   return (
     <header className="header">
@@ -15,6 +16,7 @@ function Headers() {
             <p>самая вкусная пицца во вселенной</p>
           </div>
         </div>
+        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         {location === "/" ? (
           <div className="header__cart">
             <Link to="/cart" className="button button--cart">

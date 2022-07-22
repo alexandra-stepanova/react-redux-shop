@@ -10,6 +10,7 @@ function Main({
   onClickCategory,
   sortType,
   onClickType,
+  searchValue,
 }) {
   return (
     <main className="main">
@@ -25,7 +26,11 @@ function Main({
         </div>
       </section>
       <h2 className="content__title">Все пиццы</h2>
-      <PizzaBlock pizzas={pizzas} isLoading={isLoading} />
+      <PizzaBlock
+        pizzas={pizzas}
+        isLoading={isLoading}
+        searchValue={searchValue}
+      />
     </main>
   );
 }
