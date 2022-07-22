@@ -27,8 +27,12 @@ function App() {
         setPizzas(response);
       })
       .catch((error) => console.log("error", error))
-      .finally(() => setTimeout(() => setIsLoading(false), 600));
+      .finally(() => setTimeout(() => setIsLoading(false), 500));
   }, [categoryId, sortProperty]);
+
+  const filteredPizzas = pizzas.filter((obj) =>
+    obj.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <div className="app">
@@ -38,7 +42,7 @@ function App() {
           path="/"
           element={
             <Main
-              pizzas={pizzas}
+              pizzas={filteredPizzas}
               isLoading={isLoading}
               categoryId={categoryId}
               onClickCategory={(index) => setCategoryId(index)}
