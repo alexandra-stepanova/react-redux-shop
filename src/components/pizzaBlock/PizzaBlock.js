@@ -4,19 +4,21 @@ import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
 
 function PizzaBlock({ pizzas, isLoading, searchValue }) {
   return (
-    <ul className="content__items">
-      {pizzas
-        .filter((obj) =>
-          obj.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-        .map((pizza, index) =>
-          isLoading ? (
-            <PizzaSkeleton key={index} />
-          ) : (
-            <Pizza key={pizza.id} {...pizza} />
-          )
-        )}
-    </ul>
+    <>
+      {pizzas.length ? (
+        <ul className="content__items">
+          {pizzas.map((pizza, index) =>
+            isLoading ? (
+              <PizzaSkeleton key={index} />
+            ) : (
+              <Pizza key={pizza.id} {...pizza} />
+            )
+          )}
+        </ul>
+      ) : (
+        <p>По Вашему запросу ничего не найденно</p>
+      )}
+    </>
   );
 }
 
