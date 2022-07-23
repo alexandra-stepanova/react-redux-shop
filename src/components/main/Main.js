@@ -2,6 +2,7 @@ import React from "react";
 import Categories from "../categories/Categories";
 import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
+import Pagination from "../pagination/Pagination";
 
 function Main({
   pizzas,
@@ -11,6 +12,8 @@ function Main({
   sortType,
   onClickType,
   searchValue,
+  setCurrentPage,
+  currentPage,
 }) {
   return (
     <main className="main">
@@ -31,6 +34,7 @@ function Main({
         isLoading={isLoading}
         searchValue={searchValue}
       />
+      <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </main>
   );
 }

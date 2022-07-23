@@ -16,19 +16,20 @@ function App() {
     sortProperty: "rating",
   });
   const [searchValue, setSearchValue] = React.useState("");
+  const [currentPage, setCurrentPage] = React.useState(1);
 
   let sortProperty = sortType.sortProperty;
 
   React.useEffect(() => {
     setIsLoading(true);
     api
-      .getPizzas(categoryId, sortProperty, searchValue)
+      .getPizzas(categoryId, sortProperty, searchValue, currentPage)
       .then((response) => {
         setPizzas(response);
       })
       .catch((error) => console.log("error", error))
       .finally(() => setTimeout(() => setIsLoading(false), 500));
-  }, [categoryId, sortProperty, searchValue]);
+  }, [categoryId, sortProperty, searchValue, currentPage]);
 
   return (
     <div className="app">
@@ -44,10 +45,12 @@ function App() {
               onClickCategory={(index) => setCategoryId(index)}
               sortType={sortType}
               onClickType={(index) => setSortType(index)}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
             />
           }
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart pizzas={pizzas} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>

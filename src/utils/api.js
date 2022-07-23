@@ -11,9 +11,10 @@ class Api {
     return Promise.reject(`Error: ${res.status}`);
   }
 
-  getPizzas(categoryId, sortProperty, searchValue) {
+  getPizzas(categoryId, sortProperty, searchValue, currentPage) {
     return fetch(
-      `${this._url}/items?${
+      `${this._url}/items?page=${currentPage}&limit=4&${
+        //пагинация с бэка
         categoryId > 0 ? `category=${categoryId}` : "" //сортировку по типу
       }&sortBy=${sortProperty.replace("-", "")}&order=${
         //сортировка по убыванию/повышению цены, популярности, по алфавиту
