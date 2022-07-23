@@ -2,7 +2,7 @@ import React from "react";
 import Pizza from "../pizza/Pizza";
 import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
 
-function PizzaBlock({ pizzas, isLoading, searchValue }) {
+function PizzaBlock({ pizzas, isLoading }) {
   return (
     <>
       {pizzas.length ? (

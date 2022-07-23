@@ -22,17 +22,13 @@ function App() {
   React.useEffect(() => {
     setIsLoading(true);
     api
-      .getPizzas(categoryId, sortProperty)
+      .getPizzas(categoryId, sortProperty, searchValue)
       .then((response) => {
         setPizzas(response);
       })
       .catch((error) => console.log("error", error))
       .finally(() => setTimeout(() => setIsLoading(false), 500));
-  }, [categoryId, sortProperty]);
-
-  const filteredPizzas = pizzas.filter((obj) =>
-    obj.name.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  }, [categoryId, sortProperty, searchValue]);
 
   return (
     <div className="app">
@@ -42,13 +38,12 @@ function App() {
           path="/"
           element={
             <Main
-              pizzas={filteredPizzas}
+              pizzas={pizzas}
               isLoading={isLoading}
               categoryId={categoryId}
               onClickCategory={(index) => setCategoryId(index)}
               sortType={sortType}
               onClickType={(index) => setSortType(index)}
-              searchValue={searchValue}
             />
           }
         />
