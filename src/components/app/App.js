@@ -8,8 +8,7 @@ import api from "../../utils/api";
 import { useSelector } from "react-redux";
 
 function App() {
-  const categoryId = useSelector((state) => state.filters.categoryId);
-  const sortType = useSelector((state) => state.filters.sortType);
+  const { categoryId, sortType } = useSelector((state) => state.filters);
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
