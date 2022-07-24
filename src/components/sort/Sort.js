@@ -7,7 +7,7 @@ function Sort() {
   const dispatch = useDispatch();
   const sortType = useSelector((state) => state.filters.sortType);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
-  console.log(sortType);
+  
   const handlerOnOpen = (index) => {
     dispatch(setSortType(index));
     setIsOpenPopup(false);
