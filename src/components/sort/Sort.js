@@ -1,11 +1,15 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setSortType } from "../../redux/slices/filterSlice";
 import values from "../../utils/values";
 
-function Sort({ onClickType, sortType }) {
+function Sort() {
+  const dispatch = useDispatch();
+  const sortType = useSelector((state) => state.filters.sortType);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
-
+  console.log(sortType);
   const handlerOnOpen = (index) => {
-    onClickType(index);
+    dispatch(setSortType(index));
     setIsOpenPopup(false);
   };
   return (

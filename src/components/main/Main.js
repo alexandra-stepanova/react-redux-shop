@@ -4,22 +4,14 @@ import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 import Pagination from "../pagination/Pagination";
 
-function Main({
-  pizzas,
-  isLoading,
-  sortType,
-  onClickType,
-  searchValue,
-  setCurrentPage,
-  currentPage,
-}) {
+function Main({ pizzas, isLoading, searchValue, setCurrentPage, currentPage }) {
   return (
     <main className="main">
       <section className="content">
         <div className="container">
           <div className="content__top">
             <Categories />
-            <Sort sortType={sortType} onClickType={onClickType} />
+            <Sort />
           </div>
         </div>
       </section>

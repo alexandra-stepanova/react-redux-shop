@@ -1,9 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId } from "../../redux/slices/filterSlice";
 import categories from "../../utils/categories";
 
-function Catigories({ categoryId }) {
+function Catigories() {
+  const categoryId = useSelector((state) => state.filters.categoryId);
   const dispatch = useDispatch();
 
   function onClickCategory(id) {
