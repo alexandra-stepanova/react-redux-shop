@@ -7,8 +7,6 @@ import Pagination from "../pagination/Pagination";
 function Main({
   pizzas,
   isLoading,
-  categoryId,
-  onClickCategory,
   sortType,
   onClickType,
   searchValue,
@@ -20,10 +18,7 @@ function Main({
       <section className="content">
         <div className="container">
           <div className="content__top">
-            <Categories
-              categoryId={categoryId}
-              onClickCategory={onClickCategory}
-            />
+            <Categories />
             <Sort sortType={sortType} onClickType={onClickType} />
           </div>
         </div>

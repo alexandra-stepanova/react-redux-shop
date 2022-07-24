@@ -4,13 +4,16 @@ import Header from "../header/Header";
 import Main from "../main/Main";
 import Cart from "../cart/Cart";
 import NotFound from "../notFound/NotFound";
-
 import api from "../../utils/api";
+import { useSelector } from "react-redux";
+//import { decrement } from '../../redux/slices/filterSlice';
 
 function App() {
+  const categoryId = useSelector((state) => state.filters.categoryId);
+  //const dispatch = useDispatch();
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [categoryId, setCategoryId] = React.useState(0);
+  //const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
     name: "популярности",
     sortProperty: "rating",
@@ -19,6 +22,7 @@ function App() {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   let sortProperty = sortType.sortProperty;
+  console.log(categoryId);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -41,8 +45,6 @@ function App() {
             <Main
               pizzas={pizzas}
               isLoading={isLoading}
-              categoryId={categoryId}
-              onClickCategory={(index) => setCategoryId(index)}
               sortType={sortType}
               onClickType={(index) => setSortType(index)}
               setCurrentPage={setCurrentPage}

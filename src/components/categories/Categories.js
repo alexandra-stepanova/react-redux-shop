@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setCategoryId } from "../../redux/slices/filterSlice";
 import categories from "../../utils/categories";
 
-function Catigories({ categoryId, onClickCategory }) {
+function Catigories({ categoryId }) {
+  const dispatch = useDispatch();
+
+  function onClickCategory(id) {
+    dispatch(setCategoryId(id));
+  }
   return (
     <div className="categories">
       <ul className="types">
