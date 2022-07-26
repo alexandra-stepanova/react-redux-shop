@@ -1,18 +1,13 @@
+import axios from "axios";
+
 class Api {
   constructor(options) {
     this._url = options.url;
     this._headers = options.headers;
   }
 
-  _handleResponse(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  }
-
   getPizzas(categoryId, sortProperty, searchValue, currentPage) {
-    return fetch(
+    return axios.get(
       `${this._url}/items?page=${currentPage}&limit=4&${
         //пагинация с бэка
         categoryId > 0 ? `category=${categoryId}` : "" //сортировку по типу
@@ -23,10 +18,9 @@ class Api {
         searchValue ? `search=${searchValue}` : "" //фильтрация по поиску слова в header
       }`,
       {
-        method: "GET",
         headers: this._headers,
       }
-    ).then(this._handleResponse);
+    );
   }
 }
 

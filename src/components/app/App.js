@@ -20,8 +20,8 @@ function App() {
     setIsLoading(true);
     api
       .getPizzas(categoryId, sortProperty, searchValue, currentPage)
-      .then((response) => {
-        setPizzas(response);
+      .then((res) => {
+        setPizzas(res.data);
       })
       .catch((error) => console.log("error", error))
       .finally(() => setTimeout(() => setIsLoading(false), 500));
