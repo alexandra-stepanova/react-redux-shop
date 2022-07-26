@@ -1,6 +1,13 @@
 import React from "react";
 
 function Search({ searchValue, setSearchValue }) {
+  const inputRef = React.useRef();
+
+  const onClickClear = () => {
+    setSearchValue('');
+    inputRef.current.focus();
+  }
+
   return (
     <div className="search">
       <label className="search-label">
@@ -38,6 +45,7 @@ function Search({ searchValue, setSearchValue }) {
           />
         </svg>
         <input
+          ref={inputRef}
           value={searchValue}
           className="search-input"
           placeholder="Поиск"
@@ -47,7 +55,7 @@ function Search({ searchValue, setSearchValue }) {
         />
         {searchValue && (
           <svg
-            onClick={() => setSearchValue("")}
+            onClick={onClickClear}
             className="search-clearIcon"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
