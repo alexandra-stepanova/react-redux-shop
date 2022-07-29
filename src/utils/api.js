@@ -14,7 +14,7 @@ class Api {
       }&sortBy=${sortProperty.replace("-", "")}&order=${
         //сортировка по убыванию/повышению цены, популярности, по алфавиту
         sortProperty.includes("-") ? "asc" : "desc"
-      }${
+      }&&${
         searchValue ? `search=${searchValue}` : "" //фильтрация по поиску слова в header
       }`,
       {
