@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useCallback } from "react";
+import debounce from "lodash.debounce";
 
-function Search({ searchValue, setSearchValue }) {
+function Search({ setSearchValue }) {
+  const [value, setValue] = React.useState("");
   const inputRef = React.useRef();
 
   const onClickClear = () => {
-    setSearchValue('');
+    setSearchValue("");
+    setValue("");
     inputRef.current.focus();
-  }
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const updateSearchValue = useCallback(
+    debounce((str) => {
+      setSearchValue(str);
+    }, 600),
+    []
+  );
+
+  const onChangeInput = (event) => {
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
+  };
 
   return (
     <div className="search">
@@ -46,14 +62,14 @@ function Search({ searchValue, setSearchValue }) {
         </svg>
         <input
           ref={inputRef}
-          value={searchValue}
+          value={value}
           className="search-input"
           placeholder="Поиск"
           type="text"
           minLength="1"
-          onChange={(event) => setSearchValue(event.target.value)}
+          onChange={onChangeInput}
         />
-        {searchValue && (
+        {value && (
           <svg
             onClick={onClickClear}
             className="search-clearIcon"
