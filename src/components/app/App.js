@@ -8,11 +8,12 @@ import api from "../../utils/api";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { categoryId, sortType } = useSelector((state) => state.filters);
+  const { categoryId, sortType, currentPage } = useSelector(
+    (state) => state.filters
+  );
   const [pizzas, setPizzas] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [searchValue, setSearchValue] = React.useState("");
-  const [currentPage, setCurrentPage] = React.useState(1);
 
   let sortProperty = sortType.sortProperty;
 
@@ -37,7 +38,6 @@ function App() {
             <Main
               pizzas={pizzas}
               isLoading={isLoading}
-              setCurrentPage={setCurrentPage}
               currentPage={currentPage}
             />
           }

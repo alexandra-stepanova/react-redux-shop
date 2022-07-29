@@ -4,7 +4,7 @@ import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 import Pagination from "../pagination/Pagination";
 
-function Main({ pizzas, isLoading, searchValue, setCurrentPage, currentPage }) {
+function Main({ pizzas, isLoading, searchValue, currentPage }) {
   return (
     <main className="main">
       <section className="content">
@@ -21,7 +21,7 @@ function Main({ pizzas, isLoading, searchValue, setCurrentPage, currentPage }) {
         isLoading={isLoading}
         searchValue={searchValue}
       />
-      <Pagination setCurrentPage={setCurrentPage} currentPage={currentPage} />
+      <Pagination currentPage={currentPage} />
     </main>
   );
 }
