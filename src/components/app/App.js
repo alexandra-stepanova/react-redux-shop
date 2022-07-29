@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Header setSearchValue={setSearchValue} />
       <Routes>
         <Route
           path="/"
