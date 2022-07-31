@@ -7,13 +7,28 @@ function Sort() {
   const dispatch = useDispatch();
   const sortType = useSelector((state) => state.filters.sortType);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
-  
+  const sortRef = React.useRef();
+
   const handlerOnOpen = (index) => {
     dispatch(setSortType(index));
     setIsOpenPopup(false);
   };
+
+  React.useEffect(() => {
+    const handleCloseByOverlay = (event) => {
+      if (!event.path.includes(sortRef.current)) {
+        setIsOpenPopup(false);
+      }
+    };
+
+    document.body.addEventListener("click", handleCloseByOverlay);
+    return () => {
+      document.body.removeEventListener("click", handleCloseByOverlay);
+    };
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className="sort__label">
         <svg
           width="10"
