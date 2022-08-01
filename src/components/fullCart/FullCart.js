@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "../cartItem/CartItem";
 
-function FullCart({ pizzas }) {
+function FullCart({ pizzas, totalPrice, totalCount }) {
   return (
     <div className="container container--cart">
       <div className="cart">
@@ -89,11 +89,11 @@ function FullCart({ pizzas }) {
           <div className="cart__bottom-details">
             <span>
               {" "}
-              Всего пицц: <b>10 шт.</b>{" "}
+              Всего пицц: <b>{totalCount(pizzas)}</b>{" "}
             </span>
             <span>
               {" "}
-              Сумма заказа: <b>10 ₽</b>{" "}
+              Сумма заказа: <b>{totalPrice} ₽</b>{" "}
             </span>
           </div>
           <div className="cart__bottom-buttons">
