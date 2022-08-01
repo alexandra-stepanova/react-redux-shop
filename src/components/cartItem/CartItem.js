@@ -1,8 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { removeItem } from "../../redux/slices/cartSlice";
 
 function CartItem(pizza) {
   const dispatch = useDispatch();
+  const id = pizza.id;
+
+  const deleteItem = () => {
+    dispatch(removeItem(id));
+  };
+
   return (
     <div className="cart__item">
       <div className="cart__item-img">
@@ -37,7 +44,7 @@ function CartItem(pizza) {
             ></path>
           </svg>
         </button>
-         <b>{pizza.count}</b>
+        <b>{pizza.count}</b>
         <button
           //onClick={onClickPlus}
           className="button button--outline button--circle cart__item-count-plus"
@@ -60,9 +67,14 @@ function CartItem(pizza) {
           </svg>
         </button>
       </div>
-      <div className="cart__item-price"><b>{pizza.price * pizza.count} ₽</b></div>
+      <div className="cart__item-price">
+        <b>{pizza.price * pizza.count} ₽</b>
+      </div>
       <div className="cart__item-remove">
-        <div className="button button--outline button--circle">
+        <button
+          onClick={deleteItem}
+          className="button button--outline button--circle"
+        >
           <svg
             width="10"
             height="10"
@@ -79,7 +91,7 @@ function CartItem(pizza) {
               fill="#EB5A1E"
             ></path>
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );
