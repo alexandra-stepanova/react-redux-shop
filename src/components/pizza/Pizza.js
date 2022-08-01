@@ -1,17 +1,35 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import pizzaTypes from "../../utils/pizzaTypes";
+import { addItem } from "../../redux/slices/cartSlice";
 
-function Pizza(pizza) {
+function Pizza({ id, name, imageUrl, price, sizes, types }) {
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
-  
+  const cartItem = useSelector((state) =>
+    state.cart.items.find((obj) => obj.id === id)
+  );
+  const addCount = cartItem ? cartItem.count : 0;
+  const dispatch = useDispatch();
+
+  const onClickAdd = () => {
+    const item = {
+      id,
+      name,
+      imageUrl,
+      price,
+      sizes: activeSize,
+      types: activeType,
+    };
+    dispatch(addItem(item));
+  };
   return (
     <li className="pizza-block">
-      <img className="pizza-block__image" src={pizza.imageUrl} alt="Pizza" />
-      <h4 className="pizza-block__title">{pizza.name}</h4>
+      <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+      <h4 className="pizza-block__title">{name}</h4>
       <div className="pizza-block__selector">
         <ul className="decoration">
-          {pizza.types.map((type, index) => {
+          {types.map((type, index) => {
             return (
               <li
                 onClick={() => setActiveType(type)}
@@ -24,7 +42,7 @@ function Pizza(pizza) {
           })}
         </ul>
         <ul className="decoration">
-          {pizza.sizes.map((size, index) => {
+          {sizes.map((size, index) => {
             return (
               <li
                 onClick={() => setActiveSize(index)}
@@ -38,8 +56,11 @@ function Pizza(pizza) {
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {pizza.price} ₽</div>
-        <div className="button button--outline button--add">
+        <div className="pizza-block__price">от {price} ₽</div>
+        <button
+          onClick={onClickAdd}
+          className="button button--outline button--add"
+        >
           <svg
             width="12"
             height="12"
@@ -53,8 +74,8 @@ function Pizza(pizza) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
-        </div>
+          {addCount > 0 && <i>{addCount}</i>}
+        </button>
       </div>
     </li>
   );
