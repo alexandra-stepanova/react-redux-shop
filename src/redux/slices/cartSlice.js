@@ -10,14 +10,14 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      const findItem = state.items.find((obj) => obj.id === action.payload.id);
+      const findItem = state.items.find((obj) => obj.id === action.payload.id);// поиск схожих пицц по id при добавлении в корзину
       if (findItem) {
-        findItem.count++;
+        findItem.count++; //добавление
       } else {
-        state.items.push({ ...action.payload, count: 1 });
+        state.items.push({ ...action.payload, count: 1 }); //добавление в items.count
       }
 
-      state.totalPrice = state.items.reduce((sum, obj) => {
+      state.totalPrice = state.items.reduce((sum, obj) => { // подсчет сумму за все пиццы
         return obj.price * obj.count + sum;
       }, 0);
     },
