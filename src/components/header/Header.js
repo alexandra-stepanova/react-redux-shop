@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
+import { useSelector } from "react-redux";
 import Search from "../search/Search";
 import pizza from "../../assets/images/pizza-logo.svg";
 
 function Headers({ setSearchValue }) {
+  const { items, totalPrice } = useSelector((state) => state.cart);
   let location = useLocation().pathname;
+  console.log(items)
   return (
     <header className="header">
       <div className="container">
@@ -20,7 +23,7 @@ function Headers({ setSearchValue }) {
         {location === "/" ? (
           <div className="header__cart">
             <Link to="/cart" className="button button--cart">
-              <span>520 ₽</span>
+              <span>{totalPrice} Р</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"
@@ -51,7 +54,7 @@ function Headers({ setSearchValue }) {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>3</span>
+              <span>{items.length}</span>
             </Link>
           </div>
         ) : null}
