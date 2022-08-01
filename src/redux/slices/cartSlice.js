@@ -22,6 +22,17 @@ export const cartSlice = createSlice({
         return obj.price * obj.count + sum;
       }, 0);
     },
+    minusItem(state, action) {
+      const findItem = state.items.find((obj) => obj.id === action.payload);
+      if (findItem) {
+        findItem.count--;
+      }
+
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        // подсчет сумму за все пиццы
+        return obj.price * obj.count + sum;
+      }, 0);
+    },
     removeItem(state, action) {
       //удаление выборочной пиццы
       state.items = state.items.filter((obj) => obj.id !== action.payload);
@@ -34,6 +45,6 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, removeItem, clearItem } = cartSlice.actions;
+export const { addItem, removeItem, clearItem, minusItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
