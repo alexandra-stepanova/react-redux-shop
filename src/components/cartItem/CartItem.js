@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 function CartItem(pizza) {
+  const dispatch = useDispatch();
   return (
     <div className="cart__item">
       <div className="cart__item-img">
@@ -9,7 +11,7 @@ function CartItem(pizza) {
       <div className="cart__item-info">
         <h3>{pizza.name}</h3>
         <p>
-          {pizza.type}, {pizza.size} см.
+          {pizza.types}, {pizza.sizes} см.
         </p>
       </div>
       <div className="cart__item-count">
@@ -35,7 +37,7 @@ function CartItem(pizza) {
             ></path>
           </svg>
         </button>
-        {/* <b>{count}</b> */}
+         <b>{pizza.count}</b>
         <button
           //onClick={onClickPlus}
           className="button button--outline button--circle cart__item-count-plus"
@@ -58,7 +60,7 @@ function CartItem(pizza) {
           </svg>
         </button>
       </div>
-      <div className="cart__item-price">{/* <b>{price * count} ₽</b> */}</div>
+      <div className="cart__item-price"><b>{pizza.price * pizza.count} ₽</b></div>
       <div className="cart__item-remove">
         <div className="button button--outline button--circle">
           <svg
