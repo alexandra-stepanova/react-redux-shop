@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "../cartItem/CartItem";
 
 function FullCart({ pizzas, totalPrice, totalCount }) {
+  const dispatch = useDispatch();
+
+  const clearCart = () => {
+    dispatch(clearItem());
+  };
   return (
     <div className="container container--cart">
       <div className="cart">
@@ -39,7 +46,7 @@ function FullCart({ pizzas, totalPrice, totalCount }) {
             </svg>
             Корзина
           </h2>
-          <div className="cart__clear">
+          <div onClick={clearCart} className="cart__clear">
             <svg
               width="20"
               height="20"

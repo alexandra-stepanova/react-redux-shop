@@ -8,7 +8,7 @@ function Cart({ totalCount }) {
   return !items.length ? (
     <EmptyCard />
   ) : (
-    <FullCart pizzas={items} totalPrice={totalPrice} totalCount={totalCount} />
+    <FullCart pizzas={items} totalPrice={totalPrice} totalCount={totalCount}/>
   );
 }
 
