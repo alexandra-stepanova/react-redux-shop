@@ -1,30 +1,37 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { removeItem } from "../../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { removeItem, minusItem, addItem } from "../../redux/slices/cartSlice";
 
-function CartItem(pizza) {
+function CartItem({ id, name, imageUrl, types, sizes, count, price }) {
   const dispatch = useDispatch();
-  const id = pizza.id;
 
   const deleteItem = () => {
     dispatch(removeItem(id));
   };
 
+  const onClickMinus = () => {
+    dispatch(minusItem(id));
+  };
+
+  const onClickPlus = () => {
+    dispatch(addItem({ id }));
+  };
+
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img className="pizza-block__image" src={pizza.imageUrl} alt="Pizza" />
+        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
       </div>
       <div className="cart__item-info">
-        <h3>{pizza.name}</h3>
+        <h3>{name}</h3>
         <p>
-          {pizza.types}, {pizza.sizes} см.
+          {types}, {sizes} см.
         </p>
       </div>
       <div className="cart__item-count">
         <button
           //disabled={count === 1}
-          //onClick={onClickMinus}
+          onClick={onClickMinus}
           className="button button--outline button--circle cart__item-count-minus"
         >
           <svg
@@ -44,9 +51,9 @@ function CartItem(pizza) {
             ></path>
           </svg>
         </button>
-        <b>{pizza.count}</b>
+        <b>{count}</b>
         <button
-          //onClick={onClickPlus}
+          onClick={onClickPlus}
           className="button button--outline button--circle cart__item-count-plus"
         >
           <svg
@@ -68,7 +75,7 @@ function CartItem(pizza) {
         </button>
       </div>
       <div className="cart__item-price">
-        <b>{pizza.price * pizza.count} ₽</b>
+        <b>{price * count} ₽</b>
       </div>
       <div className="cart__item-remove">
         <button
