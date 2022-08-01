@@ -70,9 +70,12 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryId, sortProperty, searchValue, currentPage]);
 
+  const totalCount = (items) =>
+    items.reduce((sum, item) => sum + item.count, 0);
+
   return (
     <div className="app">
-      <Header setSearchValue={setSearchValue} />
+      <Header setSearchValue={setSearchValue} totalCount={totalCount} />
       <Routes>
         <Route
           path="/"
@@ -84,7 +87,7 @@ function App() {
             />
           }
         />
-        <Route path="/cart" element={<Cart pizzas={pizzas} />} />
+        <Route path="/cart" element={<Cart totalCount={totalCount} />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </div>
