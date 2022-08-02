@@ -40,6 +40,7 @@ export const cartSlice = createSlice({
     clearItem(state) {
       //удаление всез пицц из корзины
       state.items = [];
+      state.totalPrice = 0;
     },
   },
 });
