@@ -18,8 +18,8 @@ function Pizza({ id, name, imageUrl, price, sizes, types }) {
       name,
       imageUrl,
       price,
-      sizes: activeSize,
-      types: activeType,
+      sizes: sizes[activeSize],
+      types: pizzaTypes[activeType],
     };
     dispatch(addItem(item));
   };
