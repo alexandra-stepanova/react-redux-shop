@@ -6,8 +6,8 @@ class Api {
     this._headers = options.headers;
   }
 
-  getPizzas(categoryId, sortProperty, searchValue, currentPage) {
-    return axios.get(
+  getPizzas = async (categoryId, sortProperty, searchValue, currentPage) => {
+    return await axios.get(
       `${this._url}/items?page=${currentPage}&limit=4&${
         //пагинация с бэка
         categoryId > 0 ? `category=${categoryId}` : "" //сортировку по типу

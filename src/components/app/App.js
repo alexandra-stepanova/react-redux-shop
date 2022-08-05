@@ -24,7 +24,6 @@ function App() {
   const isMounted = React.useRef(false);
 
   const fetchPizza = () => {
-    setIsLoading(true);
     api
       .getPizzas(categoryId, sortProperty, searchValue, currentPage)
       .then((res) => {
