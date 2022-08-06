@@ -4,7 +4,7 @@ import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 import Pagination from "../pagination/Pagination";
 
-function Main({ isLoading, searchValue, currentPage }) {
+function Main({ isLoading, searchValue, currentPage, error }) {
   return (
     <main className="main">
       <section className="content">
@@ -16,8 +16,17 @@ function Main({ isLoading, searchValue, currentPage }) {
         </div>
       </section>
       <h2 className="content__title">Все пиццы</h2>
-      <PizzaBlock isLoading={isLoading} searchValue={searchValue} />
-      <Pagination currentPage={currentPage} />
+      {error ? (
+        <>
+          <p>На сервере произошла ошибка. Приносим наши извинения</p>
+          <p>Пожалуйста, зайдите позже.</p>
+        </>
+      ) : (
+        <>
+          <PizzaBlock isLoading={isLoading} searchValue={searchValue} />
+          <Pagination currentPage={currentPage} />
+        </>
+      )}
     </main>
   );
 }

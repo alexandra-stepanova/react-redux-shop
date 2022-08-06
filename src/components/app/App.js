@@ -74,7 +74,11 @@ function App() {
         <Route
           path="/"
           element={
-            <Main isLoading={status === "loading"} currentPage={currentPage} />
+            <Main
+              isLoading={status === "loading"}
+              currentPage={currentPage}
+              error={status === "error"}
+            />
           }
         />
         <Route path="/cart" element={<Cart totalCount={totalCount} />} />
