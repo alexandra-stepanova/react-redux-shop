@@ -11,11 +11,11 @@ import Cart from "../cart/Cart";
 import NotFound from "../notFound/NotFound";
 
 function App() {
-  const { categoryId, sortType, currentPage } = useSelector(
+  const { categoryId, sortType, currentPage, searchValue } = useSelector(
     (state) => state.filters
   );
   const status = useSelector((state) => state.pizzas.status);
-  const [searchValue, setSearchValue] = React.useState("");
+  // const [searchValue, setSearchValue] = React.useState("");
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const sortProperty = sortType.sortProperty;
@@ -69,7 +69,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header setSearchValue={setSearchValue} totalCount={totalCount} />
+      <Header totalCount={totalCount} />
       <Routes>
         <Route
           path="/"

@@ -6,7 +6,7 @@ import { cartSelector } from "../../redux/slices/cartSlice";
 import Search from "../search/Search";
 import pizza from "../../assets/images/pizza-logo.svg";
 
-function Headers({ setSearchValue, totalCount }) {
+function Headers({ totalCount }) {
   const { items, totalPrice } = useSelector(cartSelector);
   let location = useLocation().pathname;
 
@@ -22,7 +22,7 @@ function Headers({ setSearchValue, totalCount }) {
         </div>
         {location === "/" ? (
           <>
-            <Search setSearchValue={setSearchValue} />
+            <Search />
             <div className="header__cart">
               <Link to="/cart" className="button button--cart">
                 <span>{totalPrice} Р</span>
