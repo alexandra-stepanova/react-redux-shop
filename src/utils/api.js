@@ -21,7 +21,7 @@ class Api {
         headers: this._headers,
       }
     );
-  }
+  };
 }
 
 const api = new Api({

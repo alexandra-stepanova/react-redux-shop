@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  pizzas: []
+  pizzas: [],
 };
 
 export const pizzasSlice = createSlice({
