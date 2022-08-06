@@ -1,8 +1,11 @@
 import React from "react";
 import Pizza from "../pizza/Pizza";
 import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
+import { useSelector } from "react-redux";
 
-function PizzaBlock({ pizzas, isLoading }) {
+function PizzaBlock({ isLoading }) {
+  const pizzas = useSelector((state) => state.pizzas.pizzas);
+  console.log(pizzas);
   return (
     <>
       {pizzas.length ? (
