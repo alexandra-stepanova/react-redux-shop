@@ -17,10 +17,10 @@ function Main({ isLoading, searchValue, currentPage, error }) {
       </section>
       <h2 className="content__title">Все пиццы</h2>
       {error ? (
-        <>
+        <div>
           <p>На сервере произошла ошибка. Приносим наши извинения</p>
-          <p>Пожалуйста, зайдите позже.</p>
-        </>
+          <p>Попробуйте повториь попытку позже.</p>
+        </div>
       ) : (
         <>
           <PizzaBlock isLoading={isLoading} searchValue={searchValue} />
