@@ -8,6 +8,7 @@ import qs from "qs";
 import MainLayoyt from "../layouts/MainLayout";
 import Main from "../main/Main";
 import Cart from "../cart/Cart";
+import SinglePage from "../singlePage/SinglePage";
 import NotFound from "../notFound/NotFound";
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
               />
             }
           />
+          <Route path="/pizza/:id" element={<SinglePage />} />
           <Route path="/cart" element={<Cart totalCount={totalCount} />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
