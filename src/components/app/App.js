@@ -5,7 +5,7 @@ import { setFilters } from "../../redux/slices/filterSlice";
 import { fetchPizzas } from "../../redux/slices/pizzasSlice";
 import values from "../../utils/values";
 import qs from "qs";
-import Header from "../header/Header";
+import MainLayoyt from "../layouts/MainLayout";
 import Main from "../main/Main";
 import Cart from "../cart/Cart";
 import NotFound from "../notFound/NotFound";
@@ -69,20 +69,21 @@ function App() {
 
   return (
     <div className="app">
-      <Header totalCount={totalCount} />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Main
-              isLoading={status === "loading"}
-              currentPage={currentPage}
-              error={status === "error"}
-            />
-          }
-        />
-        <Route path="/cart" element={<Cart totalCount={totalCount} />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route element={<MainLayoyt totalCount={totalCount} />}>
+          <Route
+            path="/"
+            element={
+              <Main
+                isLoading={status === "loading"}
+                currentPage={currentPage}
+                error={status === "error"}
+              />
+            }
+          />
+          <Route path="/cart" element={<Cart totalCount={totalCount} />} />
+          <Route path="/*" element={<NotFound />} />
+        </Route>
       </Routes>
     </div>
   );
