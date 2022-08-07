@@ -2,13 +2,13 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import emptyCardIcon from '../../assets/images/empty-cart.png'
 
-const EmptyCard: React.FC = () => {
+const EmptyCard = () => {
   return (
     <section className="content">
       <div className="container container--cart">
         <div className="cart cart--empty">
           <h2>
-            Корзина пустая <span>😕</span>
+            Корзина пустая <icon>😕</icon>
           </h2>
           <p>
             Вероятней всего, вы не заказывали ещё пиццу.
