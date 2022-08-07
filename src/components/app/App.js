@@ -73,7 +73,7 @@ function App() {
       <Routes>
         <Route element={<MainLayoyt totalCount={totalCount} />}>
           <Route
-            path="/"
+            path=""
             element={
               <Main
                 isLoading={status === "loading"}
@@ -82,9 +82,9 @@ function App() {
               />
             }
           />
-          <Route path="/pizza/:id" element={<SinglePage />} />
-          <Route path="/cart" element={<Cart totalCount={totalCount} />} />
-          <Route path="/*" element={<NotFound />} />
+          <Route path="pizza/:id" element={<SinglePage />} />
+          <Route path="cart" element={<Cart totalCount={totalCount} />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </div>

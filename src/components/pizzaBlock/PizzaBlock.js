@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function PizzaBlock({ isLoading }) {
   const pizzas = useSelector((state) => state.pizzas.pizzas);
-  console.log(pizzas);
+
   return (
     <>
       {pizzas.length ? (
