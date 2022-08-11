@@ -6,7 +6,7 @@ const SinglePage: React.FC = () => {
   const [pizza, setPizza] = useState<{
     imageUrl: string;
     name: string;
-  }>({});
+  }>({ imageUrl: "", name: "" });
   const { id } = useParams();
 
   React.useEffect(() => {
