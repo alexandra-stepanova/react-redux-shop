@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 
-const SinglePage = () => {
-  const [pizza, setPizza] = useState({});
+const SinglePage: React.FC = () => {
+  const [pizza, setPizza] = useState<{
+    imageUrl: string;
+    name: string;
+  }>({});
   const { id } = useParams();
 
   React.useEffect(() => {
@@ -19,7 +22,6 @@ const SinglePage = () => {
     }
     getPizza();
   }, [id]);
-  console.log(pizza);
   return (
     <div>
       <img src={pizza.imageUrl} alt="img" />
