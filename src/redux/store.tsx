@@ -6,3 +6,5 @@ import pizzasSlice from "./slices/pizzasSlice";
 export const store = configureStore({
   reducer: { filters: filterSlice, cart: cartSlice, pizzas: pizzasSlice },
 });
+
+export type RootState = ReturnType<typeof store.getState>
