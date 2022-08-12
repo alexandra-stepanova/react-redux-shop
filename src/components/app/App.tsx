@@ -24,6 +24,7 @@ const  App: React.FC = () => {
 
   const getPizzas = () => {
     dispatch(
+      //@ts-ignore
       fetchPizzas({ categoryId, sortProperty, searchValue, currentPage})
     );
   };

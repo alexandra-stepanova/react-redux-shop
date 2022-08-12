@@ -7,7 +7,7 @@ import Pagination from "../pagination/Pagination";
 type MainTypes = {
   isLoading: boolean;
   currentPage: number;
-  error: string;
+  error: boolean;
 };
 const Main: React.FC<MainTypes> = ({ isLoading, currentPage, error }) => {
   return (
