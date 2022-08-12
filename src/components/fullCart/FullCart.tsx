@@ -4,7 +4,17 @@ import { useDispatch } from "react-redux";
 import { clearItem } from "../../redux/slices/cartSlice";
 import CartItem from "../cartItem/CartItem";
 
-function FullCart({ pizzas, totalPrice, totalCount }) {
+type FullCartTypes = {
+  pizzas: [];
+  totalPrice: number;
+  totalCount: any;
+};
+
+const FullCart: React.FC<FullCartTypes> = ({
+  pizzas,
+  totalPrice,
+  totalCount,
+}) => {
   const dispatch = useDispatch();
 
   const clearCart = () => {
@@ -88,7 +98,7 @@ function FullCart({ pizzas, totalPrice, totalCount }) {
           </div>
         </div>
         <div className="content__items">
-          {pizzas.map((pizza) => {
+          {pizzas.map((pizza: any) => {
             return <CartItem key={pizza.id} {...pizza} />;
           })}
         </div>
@@ -134,6 +144,6 @@ function FullCart({ pizzas, totalPrice, totalCount }) {
       </div>
     </div>
   );
-}
+};
 
 export default FullCart;

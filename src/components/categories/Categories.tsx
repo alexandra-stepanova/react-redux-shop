@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCategoryId } from "../../redux/slices/filterSlice";
 import categories from "../../utils/categories";
 
-function Catigories() {
+const Catigories: React.FC = () => {
   const categoryId = useSelector((state) => state.filters.categoryId);
   const dispatch = useDispatch();
 
-  function onClickCategory(id) {
+  function onClickCategory(id: number) {
     dispatch(setCategoryId(id));
   }
   return (

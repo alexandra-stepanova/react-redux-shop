@@ -4,7 +4,12 @@ import Sort from "../sort/Sort";
 import PizzaBlock from "../pizzaBlock/PizzaBlock";
 import Pagination from "../pagination/Pagination";
 
-function Main({ isLoading, currentPage, error }) {
+type MainTypes = {
+  isLoading: boolean;
+  currentPage: number;
+  error: string;
+};
+const Main: React.FC<MainTypes> = ({ isLoading, currentPage, error }) => {
   return (
     <main className="main">
       <section className="content">
@@ -29,6 +34,6 @@ function Main({ isLoading, currentPage, error }) {
       )}
     </main>
   );
-}
+};
 
 export default Main;

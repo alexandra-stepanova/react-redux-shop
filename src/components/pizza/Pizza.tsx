@@ -9,8 +9,8 @@ type PizzaTypes = {
   name: string;
   imageUrl: string;
   price: number;
-  sizes: any;
-  types: any;
+  sizes: number[];
+  types: number[];
 };
 
 const Pizza: React.FC<PizzaTypes> = ({

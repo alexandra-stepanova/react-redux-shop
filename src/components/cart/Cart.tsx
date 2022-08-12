@@ -4,13 +4,16 @@ import { cartSelector } from "../../redux/slices/cartSlice";
 import EmptyCard from "../emptyCart/EmptyCart";
 import FullCart from "../fullCart/FullCart";
 
-function Cart({ totalCount }) {
+type Carttypes = {
+  totalCount: any;
+};
+const Cart: React.FC<Carttypes> = ({ totalCount }) => {
   const { items, totalPrice } = useSelector(cartSelector);
   return !items.length ? (
     <EmptyCard />
   ) : (
     <FullCart pizzas={items} totalPrice={totalPrice} totalCount={totalCount} />
   );
-}
+};
 
 export default Cart;
