@@ -1,4 +1,9 @@
-const values = [
+type ValuesItem = {
+  name: string;
+  sortProperty: string;
+}
+
+const values: ValuesItem[] = [
   { name: "по пулярности (1-5)", sortProperty: "-rating" },
   { name: "по пулярности (5-1)", sortProperty: "rating" },
   { name: "по цене (1-1500)", sortProperty: "-price" },

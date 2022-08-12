@@ -5,17 +5,17 @@ import values from "../../utils/values";
 
 function Sort() {
   const dispatch = useDispatch();
-  const sortType = useSelector((state) => state.filters.sortType);
+  const sortType = useSelector((state) => state.filters.sortType); 
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
-  const sortRef = React.useRef();
+  const sortRef = React.useRef<HTMLDivElement>(null);
 
-  const handlerOnOpen = (index) => {
+  const handlerOnOpen = (index: {}) => {
     dispatch(setSortType(index));
     setIsOpenPopup(false);
   };
 
   React.useEffect(() => {
-    const handleCloseByOverlay = (event) => {
+    const handleCloseByOverlay = (event: any) => {
       if (!event.path.includes(sortRef.current)) {
         setIsOpenPopup(false);
       }
