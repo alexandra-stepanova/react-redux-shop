@@ -6,7 +6,10 @@ import { cartSelector } from "../../redux/slices/cartSlice";
 import Search from "../search/Search";
 import pizza from "../../assets/images/pizza-logo.svg";
 
-const Headers: React.FC = ({ totalCount } : any) => {
+type HeaderType = {
+  totalCount: any;
+};
+const Header: React.FC<HeaderType> = ({ totalCount }) => {
   const { items, totalPrice } = useSelector(cartSelector);
   let location = useLocation().pathname;
 
@@ -64,6 +67,6 @@ const Headers: React.FC = ({ totalCount } : any) => {
       </div>
     </header>
   );
-}
+};
 
-export default Headers;
+export default Header;
