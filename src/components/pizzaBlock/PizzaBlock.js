@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Pizza from "../pizza/Pizza";
 import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
 import { useSelector } from "react-redux";
@@ -15,9 +14,7 @@ function PizzaBlock({ isLoading }) {
             isLoading ? (
               <PizzaSkeleton key={index} />
             ) : (
-              <Link key={pizza.id} to={`pizza/${pizza.id}`}>
                 <Pizza key={pizza.id} {...pizza} />
-              </Link>
             )
           )}
         </ul>
