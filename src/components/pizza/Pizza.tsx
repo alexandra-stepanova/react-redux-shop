@@ -1,9 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import pizzaTypes from "../../utils/pizzaTypes";
 import { addItem, cartItemByIdSelector } from "../../redux/slices/cartSlice";
 
-function Pizza({ id, name, imageUrl, price, sizes, types }) {
+type PizzaTypes = {
+  id: number;
+  name: string;
+  imageUrl: string;
+  price: number;
+  sizes: any;
+  types: any;
+};
+
+const Pizza: React.FC<PizzaTypes> = ({
+  id,
+  name,
+  imageUrl,
+  price,
+  sizes,
+  types,
+}) => {
   const [activeType, setActiveType] = React.useState(0);
   const [activeSize, setActiveSize] = React.useState(0);
   const cartItem = useSelector(cartItemByIdSelector(id));
@@ -23,11 +40,13 @@ function Pizza({ id, name, imageUrl, price, sizes, types }) {
   };
   return (
     <li className="pizza-block">
-      <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
-      <h4 className="pizza-block__title">{name}</h4>
+      <Link key={id} to={`pizza/${id}`}>
+        <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+        <h4 className="pizza-block__title">{name}</h4>
+      </Link>
       <div className="pizza-block__selector">
         <ul className="decoration">
-          {types.map((type, index) => {
+          {types.map((type: number, index: number) => {
             return (
               <li
                 onClick={() => setActiveType(type)}
@@ -40,7 +59,7 @@ function Pizza({ id, name, imageUrl, price, sizes, types }) {
           })}
         </ul>
         <ul className="decoration">
-          {sizes.map((size, index) => {
+          {sizes.map((size: number, index: number) => {
             return (
               <li
                 onClick={() => setActiveSize(index)}
@@ -77,6 +96,6 @@ function Pizza({ id, name, imageUrl, price, sizes, types }) {
       </div>
     </li>
   );
-}
+};
 
 export default Pizza;
