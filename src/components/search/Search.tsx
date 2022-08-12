@@ -5,13 +5,13 @@ import { useDispatch } from "react-redux";
 
 function Search() {
   const [value, setValue] = React.useState("");
-  const inputRef = React.useRef();
+  const inputRef = React.useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
 
   const onClickClear = () => {
     dispatch(setSearchValue(""));
     setValue("");
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -22,7 +22,7 @@ function Search() {
     []
   );
 
-  const onChangeInput = (event) => {
+  const onChangeInput = (event: any) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
@@ -69,7 +69,6 @@ function Search() {
           className="search-input"
           placeholder="Поиск"
           type="text"
-          minLength="1"
           onChange={onChangeInput}
         />
         {value && (
