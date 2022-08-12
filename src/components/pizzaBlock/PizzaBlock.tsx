@@ -3,18 +3,22 @@ import Pizza from "../pizza/Pizza";
 import PizzaSkeleton from "../pizzaSkeleton/PizzaSkeleton";
 import { useSelector } from "react-redux";
 
-function PizzaBlock({ isLoading }) {
-  const pizzas = useSelector((state) => state.pizzas.pizzas);
+type PizzaBlocktypes = {
+  isLoading: boolean;
+};
+
+const PizzaBlock: React.FC<PizzaBlocktypes> = ({ isLoading }) => {
+  const pizzas = useSelector((state: any) => state.pizzas.pizzas);
 
   return (
     <>
       {pizzas.length ? (
         <ul className="content__items">
-          {pizzas.map((pizza, index) =>
+          {pizzas.map((pizza: any, index: number) =>
             isLoading ? (
               <PizzaSkeleton key={index} />
             ) : (
-                <Pizza key={pizza.id} {...pizza} />
+              <Pizza key={pizza.id} {...pizza} />
             )
           )}
         </ul>
@@ -23,6 +27,6 @@ function PizzaBlock({ isLoading }) {
       )}
     </>
   );
-}
+};
 
 export default PizzaBlock;
