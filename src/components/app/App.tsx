@@ -11,12 +11,11 @@ import Cart from "../cart/Cart";
 import SinglePage from "../singlePage/SinglePage";
 import NotFound from "../notFound/NotFound";
 
-function App() {
+const  App: React.FC = () => {
   const { categoryId, sortType, currentPage, searchValue } = useSelector(
-    (state) => state.filters
+    (state: any) => state.filters
   );
-  const status = useSelector((state) => state.pizzas.status);
-  // const [searchValue, setSearchValue] = React.useState("");
+  const status = useSelector((state: any) => state.pizzas.status);
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const sortProperty = sortType.sortProperty;
@@ -25,7 +24,7 @@ function App() {
 
   const getPizzas = () => {
     dispatch(
-      fetchPizzas({ categoryId, sortProperty, searchValue, currentPage })
+      fetchPizzas({ categoryId, sortProperty, searchValue, currentPage})
     );
   };
 
@@ -65,8 +64,8 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const totalCount = (items) =>
-    items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = (items: []) =>
+    items.reduce((sum: number, item: any) => sum + item.count, 0);
 
   return (
     <div className="app">
