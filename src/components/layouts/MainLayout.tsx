@@ -2,7 +2,10 @@ import React from "react";
 import { Outlet } from "react-router";
 import Header from "../header/Header";
 
-const MainLayoyt = ({ totalCount }) => {
+type MainLayoytType = {
+  totalCount: any;
+};
+const MainLayoyt: React.FC<MainLayoytType> = ({ totalCount }) => {
   return (
     <div className="app">
       <Header totalCount={totalCount} />
