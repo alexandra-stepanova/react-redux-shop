@@ -15,8 +15,11 @@ const Sort: React.FC = () => {
   };
 
   React.useEffect(() => {
-    const handleCloseByOverlay = (event: any) => {
-      if (!event.path.includes(sortRef.current)) {
+    const handleCloseByOverlay = (event: MouseEvent) => {
+      const _event = event as MouseEvent & {
+        path: Node[];
+      };
+      if (sortRef.current && !_event.path.includes(sortRef.current)) {
         setIsOpenPopup(false);
       }
     };

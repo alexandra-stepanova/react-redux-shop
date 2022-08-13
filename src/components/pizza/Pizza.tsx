@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import pizzaTypes from "../../utils/pizzaTypes";
 import { addItem, cartItemByIdSelector } from "../../redux/slices/cartSlice";
 
-type PizzaTypes = {
-  id: number;
+export type PizzaTypes = {
+  id: string;
   name: string;
   imageUrl: string;
   price: number;
-  sizes: number[];
-  types: number[];
+  sizes: [];
+  types: any;
+  count: number;
 };
 
 const Pizza: React.FC<PizzaTypes> = ({
@@ -28,16 +29,19 @@ const Pizza: React.FC<PizzaTypes> = ({
   const dispatch = useDispatch();
 
   const onClickAdd = () => {
-    const item = {
+    const item: PizzaTypes  = {
       id,
       name,
       imageUrl,
       price,
       sizes: sizes[activeSize],
       types: pizzaTypes[activeType],
+      count: 0,
     };
     dispatch(addItem(item));
   };
+
+  console.log(typeof(types))
   return (
     <li className="pizza-block">
       <Link key={id} to={`pizza/${id}`}>
