@@ -1,19 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-type CartItem = {
+type CartItemSlice = {
   id: string;
   name: string;
   price: number;
   imageUrl: string;
-  type: number;
-  size: number;
+  types: [];
+  sizes: [];
   count: number;
 };
 
 interface CartSliceState {
   totalPrice: number;
-  items: CartItem[];
+  items: CartItemSlice[];
 }
 
 const initialState: CartSliceState = {
@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem(state, action) {
+    addItem(state, action: PayloadAction<CartItemSlice>) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id); // поиск схожих пицц по id при добавлении в корзину
       if (findItem) {
         findItem.count++; //добавление
@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
         return obj.price * obj.count + sum;
       }, 0);
     },
-    minusItem(state, action) {
+    minusItem(state, action: PayloadAction<string>) {
       const findItem = state.items.find((obj) => obj.id === action.payload);
       if (findItem) {
         findItem.count--;
@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
         return obj.price * obj.count + sum;
       }, 0);
     },
-    removeItem(state, action) {
+    removeItem(state, action: PayloadAction<string>) {
       //удаление выборочной пиццы
       state.items = state.items.filter((obj) => obj.id !== action.payload);
     },
