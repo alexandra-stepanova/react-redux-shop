@@ -4,7 +4,7 @@ import { setCategoryId } from "../../redux/slices/filterSlice";
 import categories from "../../utils/categories";
 
 const Catigories: React.FC = () => {
-  const categoryId = useSelector((state) => state.filters.categoryId);
+  const categoryId = useSelector((state: any) => state.filters.categoryId);
   const dispatch = useDispatch();
 
   function onClickCategory(id: number) {
