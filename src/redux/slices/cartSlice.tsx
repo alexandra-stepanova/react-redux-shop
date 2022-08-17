@@ -52,6 +52,10 @@ export const cartSlice = createSlice({
     removeItem(state, action: PayloadAction<string>) {
       //удаление выборочной пиццы
       state.items = state.items.filter((obj) => obj.id !== action.payload);
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        // подсчет сумму за все пиццы
+        return obj.price * obj.count + sum;
+      }, 0);
     },
     clearItem(state) {
       //удаление всез пицц из корзины
