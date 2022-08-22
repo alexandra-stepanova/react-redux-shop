@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { setFilters } from "../../redux/slices/filterSlice";
 import { fetchPizzas } from "../../redux/slices/pizzasSlice";
 import values from "../../utils/values";
@@ -10,6 +10,7 @@ import Main from "../main/Main";
 import Cart from "../cart/Cart";
 import SinglePage from "../singlePage/SinglePage";
 import NotFound from "../notFound/NotFound";
+import { useAppDispatch } from "../../redux/store";
 
 const  App: React.FC = () => {
   const { categoryId, sortType, currentPage, searchValue } = useSelector(
@@ -17,7 +18,7 @@ const  App: React.FC = () => {
   );
   const status = useSelector((state: any) => state.pizzas.status);
   let navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const sortProperty = sortType.sortProperty;
   const isSearch = React.useRef(false);
   const isMounted = React.useRef(false);
