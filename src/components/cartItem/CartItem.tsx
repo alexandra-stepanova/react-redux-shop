@@ -31,16 +31,7 @@ const CartItem: React.FC<CartItemTypes> = ({
   };
 
   const onClickPlus = () => {
-    const item: CartItemTypes = {
-      id,
-      name,
-      imageUrl,
-      types,
-      sizes,
-      price,
-      count,
-    };
-    dispatch(addItem(item));
+    dispatch(addItem({ id } as CartItemTypes));
   };
   return (
     <div className="cart__item">
