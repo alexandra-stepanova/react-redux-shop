@@ -29,7 +29,7 @@ const Pizza: React.FC<PizzaTypes> = ({
   const dispatch = useDispatch();
 
   const onClickAdd = () => {
-    const item: PizzaTypes  = {
+    const item: PizzaTypes = {
       id,
       name,
       imageUrl,
@@ -41,7 +41,6 @@ const Pizza: React.FC<PizzaTypes> = ({
     dispatch(addItem(item));
   };
 
-  console.log(typeof(types))
   return (
     <li className="pizza-block">
       <Link key={id} to={`pizza/${id}`}>
