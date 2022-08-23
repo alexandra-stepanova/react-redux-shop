@@ -5,11 +5,11 @@ import values from "../../utils/values";
 
 const Sort: React.FC = () => {
   const dispatch = useDispatch();
-  const sortType = useSelector((state) => state.filters.sortType);
+  const sortType = useSelector((state: any) => state.filters.sortType);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
   const sortRef = React.useRef<HTMLDivElement>(null);
 
-  const handlerOnOpen = (index: {}) => {
+  const handlerOnOpen = (index: any) => {
     dispatch(setSortType(index));
     setIsOpenPopup(false);
   };
