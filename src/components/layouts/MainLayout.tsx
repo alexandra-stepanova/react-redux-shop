@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 import Header from "../header/Header";
 
 type MainLayoytType = {
-  totalCount: any;
+  totalCount: (items: []) => number;
 };
 const MainLayoyt: React.FC<MainLayoytType> = ({ totalCount }) => {
   return (

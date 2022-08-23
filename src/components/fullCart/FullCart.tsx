@@ -7,7 +7,7 @@ import CartItem from "../cartItem/CartItem";
 type FullCartTypes = {
   pizzas: [];
   totalPrice: number;
-  totalCount: any;
+  totalCount: (items: []) => number;
 };
 
 const FullCart: React.FC<FullCartTypes> = ({

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import { useSelector } from "react-redux";
-import { cartSelector } from "../../redux/slices/cartSlice";
 import Search from "../search/Search";
 import pizza from "../../assets/images/pizza-logo.svg";
 
@@ -10,7 +9,7 @@ type HeaderType = {
   totalCount: any;
 };
 const Header: React.FC<HeaderType> = ({ totalCount }) => {
-  const { items, totalPrice } = useSelector(cartSelector);
+  const { items, totalPrice } = useSelector((state: any) => state.cart);
   let location = useLocation().pathname;
 
   return (
