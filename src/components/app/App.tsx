@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { setFilters } from "../../redux/slices/filterSlice";
-import { fetchPizzas } from "../../redux/slices/pizzasSlice";
+import { fetchPizzas, FilterSliceFetch } from "../../redux/slices/pizzasSlice";
 import values from "../../utils/values";
 import qs from "qs";
 import MainLayoyt from "../layouts/MainLayout";
@@ -12,7 +12,7 @@ import SinglePage from "../singlePage/SinglePage";
 import NotFound from "../notFound/NotFound";
 import { useAppDispatch } from "../../redux/store";
 
-const  App: React.FC = () => {
+const App: React.FC = () => {
   const { categoryId, sortType, currentPage, searchValue } = useSelector(
     (state: any) => state.filters
   );
@@ -25,8 +25,7 @@ const  App: React.FC = () => {
 
   const getPizzas = () => {
     dispatch(
-      
-      fetchPizzas({ categoryId, sortProperty, searchValue, currentPage})
+      fetchPizzas({ categoryId, sortProperty, searchValue, currentPage })
     );
   };
 
@@ -56,11 +55,21 @@ const  App: React.FC = () => {
   React.useEffect(() => {
     // если параметры получены из адресной строчки, то они вшиваются в фльтры редакса
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      const sortType = values.find(
+      const params = qs.parse(
+        window.location.search.substring(1)
+      ) as unknown as FilterSliceFetch;
+      const sort = values.find(
         (obj) => obj.sortProperty === params.sortProperty
       );
-      dispatch(setFilters({ ...params, sortType }));
+
+      dispatch(
+        setFilters({
+          categoryId: params.categoryId,
+          currentPage: params.currentPage,
+          searchValue: params.searchValue,
+          sortType: sort || values[0],
+        })
+      );
       isSearch.current = true;
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -90,6 +99,6 @@ const  App: React.FC = () => {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
