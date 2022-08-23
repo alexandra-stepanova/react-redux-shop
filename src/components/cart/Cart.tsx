@@ -1,17 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import EmptyCard from "../emptyCart/EmptyCart";
 import FullCart from "../fullCart/FullCart";
+import { MainTypes } from "../layouts/MainLayout";
 
-type Carttypes = {
-  totalCount: (items: []) => number;
-};
-const Cart: React.FC<Carttypes> = ({ totalCount }) => {
-  const { items, totalPrice } = useSelector((state: any) => state.cart);
-  return !items.length ? (
-    <EmptyCard />
-  ) : (
-    <FullCart pizzas={items} totalPrice={totalPrice} totalCount={totalCount} />
+const Cart: React.FC<MainTypes> = ({ items, totalPrice, totalCount }) => {
+  return (
+    <FullCart items={items} totalPrice={totalPrice} totalCount={totalCount} />
   );
 };
 

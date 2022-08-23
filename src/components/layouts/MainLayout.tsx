@@ -2,13 +2,15 @@ import React from "react";
 import { Outlet } from "react-router";
 import Header from "../header/Header";
 
-type MainLayoytType = {
+export type MainTypes = {
+  items: [];
+  totalPrice: number;
   totalCount: (items: []) => number;
 };
-const MainLayoyt: React.FC<MainLayoytType> = ({ totalCount }) => {
+const MainLayoyt: React.FC<MainTypes> = ({ items, totalPrice, totalCount }) => {
   return (
     <div className="app">
-      <Header totalCount={totalCount} />
+      <Header items={items} totalPrice={totalPrice} totalCount={totalCount} />
       <Outlet />
     </div>
   );
