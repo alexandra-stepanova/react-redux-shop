@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setSortType } from "../../redux/slices/filterSlice";
+import { useDispatch } from "react-redux";
+import { setSortType, SortFilter } from "../../redux/slices/filterSlice";
 import values from "../../utils/values";
 
-const Sort: React.FC = () => {
+type SortTypes = {
+  sortType: SortFilter;
+};
+
+const Sort: React.FC<SortTypes> = React.memo(({sortType}) => {
   const dispatch = useDispatch();
-  const sortType = useSelector((state: any) => state.filters.sortType);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
   const sortRef = React.useRef<HTMLDivElement>(null);
 
@@ -71,6 +74,6 @@ const Sort: React.FC = () => {
       ) : null}
     </div>
   );
-};
+});
 
 export default Sort;
