@@ -9,7 +9,7 @@ export enum enumSortProperty {
   NAME_ASC = "name",
 }
 
-export type Sort = {
+export type SortFilter = {
   name: string;
   sortProperty: enumSortProperty;
 };
@@ -18,7 +18,7 @@ export interface FilterSliceState {
   categoryId: number;
   currentPage: number;
   searchValue: string;
-  sortType: Sort;
+  sortType: SortFilter;
 }
 
 const initialState: FilterSliceState = {
@@ -41,7 +41,7 @@ export const filterSlice = createSlice({
     setSearchValue: (state, action: PayloadAction<string>) => {
       state.searchValue = action.payload;
     },
-    setSortType: (state, action: PayloadAction<Sort>) => {
+    setSortType: (state, action: PayloadAction<SortFilter>) => {
       state.sortType = action.payload;
     },
     setCurrentPage: (state, action: PayloadAction<number>) => {
