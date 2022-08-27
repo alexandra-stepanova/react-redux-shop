@@ -8,6 +8,16 @@ import { MainTypes } from "../layouts/MainLayout";
 const Header: React.FC<MainTypes> = React.memo(
   ({ items, totalPrice, totalCount }) => {
     let location = useLocation().pathname;
+    let isMounted = React.useRef(false);
+
+    React.useEffect(() => {
+      if (isMounted.current) {
+        const json = JSON.stringify(items);
+        localStorage.setItem("cart", json);
+      }
+      isMounted.current = true;
+    }, [items]);
+    
     return (
       <header className="header">
         <div className="container">
