@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { calcTotalPrice } from "../../utils/calcTotalPrice";
+import { getFromLocStor } from "../../utils/getFromLocStor";
 import { RootState } from "../store";
 
 type CartItemSlice = {
@@ -16,9 +18,11 @@ interface CartSliceState {
   items: CartItemSlice[];
 }
 
+const {items, totalPrice} = getFromLocStor();//достаем информацию из localstorage
+
 const initialState: CartSliceState = {
-  totalPrice: 0,
-  items: [],
+  totalPrice,
+  items,
 };
 
 export const cartSlice = createSlice({
@@ -44,10 +48,7 @@ export const cartSlice = createSlice({
         findItem.count--;
       }
 
-      state.totalPrice = state.items.reduce((sum, obj) => {
-        // подсчет сумму за все пиццы
-        return obj.price * obj.count + sum;
-      }, 0);
+      state.totalPrice = calcTotalPrice(state.items);
     },
     removeItem(state, action: PayloadAction<string>) {
       //удаление выборочной пиццы
