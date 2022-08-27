@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import pizzaTypes from "../../utils/pizzaTypes";
-import { addItem, cartItemByIdSelector } from "../../redux/slices/cartSlice";
+import { addItem } from "../../redux/cart/slice";
+import { cartItemByIdSelector } from "../../redux/cart/selectors";
 
 export type PizzaTypes = {
   id: string;
