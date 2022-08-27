@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setCategoryId } from "../../redux/slices/filter/slice";
+import { setCategoryId } from "../../redux/filter/slice";
 import categories from "../../utils/categories";
 
 const Catigories: React.FC = React.memo(() => {

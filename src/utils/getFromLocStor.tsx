@@ -1,4 +1,4 @@
-import { CartItemSlice } from "../redux/slices/cart/types";
+import { CartItemSlice } from "../redux/cart/types";
 import { calcTotalPrice } from "./calcTotalPrice";
 
 export const getFromLocStor = () => {

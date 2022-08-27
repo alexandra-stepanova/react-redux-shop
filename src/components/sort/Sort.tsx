@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setSortType } from "../../redux/slices/filter/slice";
-import { SortFilter } from "../../redux/slices/filter/types";
+import { setSortType } from "../../redux/filter/slice";
+import { SortFilter } from "../../redux/filter/types";
 import values from "../../utils/values";
 
 type SortTypes = {

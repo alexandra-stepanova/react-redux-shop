@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
-import { setFilters } from "../../redux/slices/filter/slice";
-import { fetchPizzas } from "../../redux/slices/pizza/asyncActions";
-import { FilterSliceFetch } from "../../redux/slices/pizza/types";
+import { setFilters } from "../../redux/filter/slice";
+import { fetchPizzas } from "../../redux/pizza/asyncActions";
+import { FilterSliceFetch } from "../../redux/pizza/types";
 import { useSelector } from "react-redux";
 import qs from "qs";
 import values from "../../utils/values";

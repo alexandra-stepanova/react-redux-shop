@@ -1,4 +1,4 @@
-import { enumSortProperty } from "../redux/slices/filter/types";
+import { enumSortProperty } from "../redux/filter/types";
 
 type ValuesItem = {
   name: string;
