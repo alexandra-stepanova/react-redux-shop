@@ -1,22 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { calcTotalPrice } from "../../utils/calcTotalPrice";
-import { getFromLocStor } from "../../utils/getFromLocStor";
-import { RootState } from "../store";
+import { calcTotalPrice } from "../../../utils/calcTotalPrice";
+import { getFromLocStor } from "../../../utils/getFromLocStor";
+import { CartSliceState, CartItemSlice } from "./types";
 
-type CartItemSlice = {
-  id: string;
-  name: string;
-  price: number;
-  imageUrl: string;
-  types: [];
-  sizes: [];
-  count: number;
-};
-
-interface CartSliceState {
-  totalPrice: number;
-  items: CartItemSlice[];
-}
 
 const {items, totalPrice} = getFromLocStor();//достаем информацию из localstorage
 
@@ -68,10 +54,6 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const cartSelector = (state: RootState) => state.cart;
-export const cartItemByIdSelector = (id: string) => (state: RootState) =>
-  state.cart.items.find((obj) => obj.id === id);
-
 export const { addItem, removeItem, clearItem, minusItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
