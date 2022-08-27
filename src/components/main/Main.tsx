@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store";
-import { setFilters } from "../../redux/slices/filterSlice";
+import { setFilters } from "../../redux/slices/filter/slice";
 import { fetchPizzas, FilterSliceFetch } from "../../redux/slices/pizzasSlice";
 import { useSelector } from "react-redux";
 import qs from "qs";

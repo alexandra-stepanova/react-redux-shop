@@ -1,13 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setSortType, SortFilter } from "../../redux/slices/filterSlice";
+import { setSortType } from "../../redux/slices/filter/slice";
+import { SortFilter } from "../../redux/slices/filter/types";
 import values from "../../utils/values";
 
 type SortTypes = {
   sortType: SortFilter;
 };
 
-const Sort: React.FC<SortTypes> = React.memo(({sortType}) => {
+const Sort: React.FC<SortTypes> = React.memo(({ sortType }) => {
   const dispatch = useDispatch();
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
   const sortRef = React.useRef<HTMLDivElement>(null);
