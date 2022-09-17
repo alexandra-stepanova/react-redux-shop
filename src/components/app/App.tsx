@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainLayoyt from "../layouts/MainLayout";
-import Main from "../main/Main";
+import Home from "../../pages/Home";
 import Cart from "../../pages/Cart";
 import SinglePage from "../../pages/SinglePage";
 import NotFound from "../notFound/NotFound";
@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <div className="app">
       <Routes>
         <Route element={<MainLayoyt items={items} totalPrice={totalPrice} totalCount={totalCount}/>}>
-          <Route path="" element={<Main />} />
+          <Route path="" element={<Home />} />
           <Route path="pizza/:id" element={<SinglePage />} />
           <Route path="cart" element={<Cart items={items} totalPrice={totalPrice} totalCount={totalCount}/>} />
           <Route path="*" element={<NotFound />} />
