@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainLayoyt from "../layouts/MainLayout";
 import Main from "../main/Main";
-import Cart from "../cart/Cart";
+import Cart from "../../pages/Cart";
 import SinglePage from "../singlePage/SinglePage";
 import NotFound from "../notFound/NotFound";
 
