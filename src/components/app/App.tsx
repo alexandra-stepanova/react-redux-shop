@@ -5,7 +5,7 @@ import MainLayoyt from "../layouts/MainLayout";
 import Home from "../../pages/Home";
 import Cart from "../../pages/Cart";
 import SinglePage from "../../pages/SinglePage";
-import NotFound from "../notFound/NotFound";
+import NotFound from "../../pages/NotFound";
 
 const App: React.FC = () => {
   const { items, totalPrice } = useSelector((state: any) => state.cart);
