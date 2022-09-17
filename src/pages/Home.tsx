@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../redux/store";
-import { setFilters } from "../../redux/filter/slice";
-import { fetchPizzas } from "../../redux/pizza/asyncActions";
-import { FilterSliceFetch } from "../../redux/pizza/types";
+import { useAppDispatch } from "../redux/store";
+import { setFilters } from "../redux/filter/slice";
+import { fetchPizzas } from "../redux/pizza/asyncActions";
+import { FilterSliceFetch } from "../redux/pizza/types";
 import { useSelector } from "react-redux";
 import qs from "qs";
-import values from "../../utils/values";
-import Categories from "../categories/Categories";
-import Sort from "../sort/Sort";
-import PizzaBlock from "../pizzaBlock/PizzaBlock";
-import Pagination from "../pagination/Pagination";
+import values from "../utils/values";
+import Categories from "../components/categories/Categories";
+import Sort from "../components/sort/Sort";
+import PizzaBlock from "../components/pizzaBlock/PizzaBlock";
+import Pagination from "../components/pagination/Pagination";
 
-const Main: React.FC = () => {
+const Home: React.FC = () => {
   const { categoryId, sortType, currentPage, searchValue } = useSelector(
     (state: any) => state.filters
   );
@@ -76,7 +76,7 @@ const Main: React.FC = () => {
   }, []);
 
   return (
-    <main className="main">
+    <main className="home">
       <section className="content">
         <div className="container">
           <div className="content__top">
@@ -101,4 +101,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export default Home;

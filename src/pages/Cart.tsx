@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { clearItem } from "../../redux/cart/slice";
-import CartItem from "../cartItem/CartItem";
-import EmptyCard from "../emptyCart/EmptyCart";
-import { MainTypes } from "../layouts/MainLayout";
+import { clearItem } from "../redux/cart/slice";
+import CartItem from "../components/cartItem/CartItem";
+import EmptyCard from "../components/emptyCart/EmptyCart";
+import { MainTypes } from "../components/layouts/MainLayout";
 
 const FullCart: React.FC<MainTypes> = React.memo(
   ({ items, totalPrice, totalCount }) => {
