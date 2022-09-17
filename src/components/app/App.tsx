@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import MainLayoyt from "../layouts/MainLayout";
 import Main from "../main/Main";
 import Cart from "../../pages/Cart";
-import SinglePage from "../singlePage/SinglePage";
+import SinglePage from "../../pages/SinglePage";
 import NotFound from "../notFound/NotFound";
 
 const App: React.FC = () => {
