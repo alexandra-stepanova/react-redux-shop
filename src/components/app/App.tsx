@@ -2,11 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainLayoyt from "../layouts/MainLayout";
-import Home from "../../pages/Home";
 import SinglePage from "../../pages/SinglePage";
 import NotFound from "../../pages/NotFound";
 
 const Cart = React.lazy(() => import("../../pages/Cart"));
+const Home = React.lazy(() => import("../../pages/Home"));
 
 const App: React.FC = () => {
   const { items, totalPrice } = useSelector((state: any) => state.cart);
@@ -25,7 +25,14 @@ const App: React.FC = () => {
             />
           }
         >
-          <Route path="" element={<Home />} />
+          <Route
+            path=""
+            element={
+              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
+                <Home />
+              </React.Suspense>
+            }
+          />
           <Route path="pizza/:id" element={<SinglePage />} />
           <Route
             path="cart"
