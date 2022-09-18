@@ -1,12 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Home from "../../pages/Home";
 import MainLayoyt from "../layouts/MainLayout";
 
-const Cart = React.lazy(() => import("../../pages/Cart"));
-const Home = React.lazy(() => import("../../pages/Home"));
-const SinglePage = React.lazy(() => import("../../pages/SinglePage"));
-const NotFound = React.lazy(() => import("../../pages/NotFound"));
+const Cart = React.lazy(
+  () => import(/*webpackChankName: "Cart"*/ "../../pages/Cart")
+);
+const SinglePage = React.lazy(
+  () => import(/*webpackChankName: "SinglePage"*/ "../../pages/SinglePage")
+);
+const NotFound = React.lazy(
+  () => import(/*webpackChankName: "NotFound"*/ "../../pages/NotFound")
+);
 
 const App: React.FC = () => {
   const { items, totalPrice } = useSelector((state: any) => state.cart);
@@ -25,40 +31,33 @@ const App: React.FC = () => {
             />
           }
         >
-          <Route
-            path=""
-            element={
-              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
-                <Home />
-              </React.Suspense>
-            }
-          />
+          <Route path="" element={<Home />} />
           <Route
             path="pizza/:id"
             element={
-              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Идет загрузка ...</div>}>
                 <SinglePage />
-              </React.Suspense>
+              </Suspense>
             }
           />
           <Route
             path="cart"
             element={
-              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Идет загрузка ...</div>}>
                 <Cart
                   items={items}
                   totalPrice={totalPrice}
                   totalCount={totalCount}
                 />
-              </React.Suspense>
+              </Suspense>
             }
           />
           <Route
             path="*"
             element={
-              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Идет загрузка ...</div>}>
                 <NotFound />
-              </React.Suspense>
+              </Suspense>
             }
           />
         </Route>
