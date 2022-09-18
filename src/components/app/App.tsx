@@ -3,10 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainLayoyt from "../layouts/MainLayout";
 import SinglePage from "../../pages/SinglePage";
-import NotFound from "../../pages/NotFound";
+// import NotFound from "../../pages/NotFound";
 
 const Cart = React.lazy(() => import("../../pages/Cart"));
 const Home = React.lazy(() => import("../../pages/Home"));
+const NotFound = React.lazy(() => import("../../pages/NotFound"));
 
 const App: React.FC = () => {
   const { items, totalPrice } = useSelector((state: any) => state.cart);
@@ -46,7 +47,14 @@ const App: React.FC = () => {
               </React.Suspense>
             }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="*"
+            element={
+              <React.Suspense fallback={<div>Идет загрузка ...</div>}>
+                <NotFound />
+              </React.Suspense>
+            }
+          />
         </Route>
       </Routes>
     </div>
