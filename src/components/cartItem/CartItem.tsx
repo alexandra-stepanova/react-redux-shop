@@ -95,7 +95,7 @@ const CartItem: React.FC<CartItemTypes> = ({
         </button>
       </div>
       <div className="cart__item-price">
-        <b>{price * count} ₽</b>
+        <b>{price * count} $</b>
       </div>
       <div className="cart__item-remove">
         <button

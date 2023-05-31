@@ -6,12 +6,12 @@ type ValuesItem = {
 };
 
 const values: ValuesItem[] = [
-  { name: "по пулярности (1-5)", sortProperty: enumSortProperty.RATING_DESC },
-  { name: "по пулярности (5-1)", sortProperty: enumSortProperty.RATING_ASC },
-  { name: "по цене (1-1500)", sortProperty: enumSortProperty.PRICE_DESC },
-  { name: "по цене (1500-1)", sortProperty: enumSortProperty.PRICE_ASC },
-  { name: "по алфавиту (A-Я)", sortProperty: enumSortProperty.NAME_DESC },
-  { name: "по алфавиту (Я-А)", sortProperty: enumSortProperty.NAME_ASC },
+  { name: "popularity (1-5)", sortProperty: enumSortProperty.RATING_DESC },
+  { name: "popularity (5-1)", sortProperty: enumSortProperty.RATING_ASC },
+  { name: "price (1-1500)", sortProperty: enumSortProperty.PRICE_DESC },
+  { name: "price (1500-1)", sortProperty: enumSortProperty.PRICE_ASC },
+  { name: "alphabetically (A-Z)", sortProperty: enumSortProperty.NAME_DESC },
+  { name: "alphabetically (Z-А)", sortProperty: enumSortProperty.NAME_ASC },
 ];
 
 export default values;

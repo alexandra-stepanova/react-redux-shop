@@ -70,14 +70,14 @@ const Pizza: React.FC<PizzaTypes> = ({
                 key={index}
                 className={`type ${activeSize === index ? "active" : ""}`}
               >
-                {size} см
+                {size} sm
               </li>
             );
           })}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+        <div className="pizza-block__price">from {price} $</div>
         <button
           onClick={onClickAdd}
           className="button button--outline button--add"
@@ -94,7 +94,7 @@ const Pizza: React.FC<PizzaTypes> = ({
               fill="white"
             />
           </svg>
-          <span>Добавить</span>
+          <span>Add</span>
           {addCount > 0 && <i>{addCount}</i>}
         </button>
       </div>

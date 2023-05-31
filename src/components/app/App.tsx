@@ -35,7 +35,7 @@ const App: React.FC = () => {
           <Route
             path="pizza/:id"
             element={
-              <Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Loading ...</div>}>
                 <SinglePage />
               </Suspense>
             }
@@ -43,7 +43,7 @@ const App: React.FC = () => {
           <Route
             path="cart"
             element={
-              <Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Loading ...</div>}>
                 <Cart
                   items={items}
                   totalPrice={totalPrice}
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           <Route
             path="*"
             element={
-              <Suspense fallback={<div>Идет загрузка ...</div>}>
+              <Suspense fallback={<div>Loading ...</div>}>
                 <NotFound />
               </Suspense>
             }

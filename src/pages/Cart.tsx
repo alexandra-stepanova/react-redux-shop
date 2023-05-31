@@ -49,7 +49,7 @@ const FullCart: React.FC<MainTypes> = React.memo(
                   strokeLinejoin="round"
                 ></path>
               </svg>
-              Корзина
+              Cart
             </h2>
             <div onClick={clearCart} className="cart__clear">
               <svg
@@ -89,7 +89,7 @@ const FullCart: React.FC<MainTypes> = React.memo(
                 ></path>
               </svg>
 
-              <span>Очистить корзину</span>
+              <span>Remove items</span>
             </div>
           </div>
           <div className="content__items">
@@ -101,11 +101,11 @@ const FullCart: React.FC<MainTypes> = React.memo(
             <div className="cart__bottom-details">
               <span>
                 {" "}
-                Всего пицц: <b>{totalCount(items)}</b>{" "}
+                Total items: <b>{totalCount(items)}</b>{" "}
               </span>
               <span>
                 {" "}
-                Сумма заказа: <b>{totalPrice} ₽</b>{" "}
+                Total price: <b>{totalPrice} $</b>{" "}
               </span>
             </div>
             <div className="cart__bottom-buttons">
@@ -129,10 +129,10 @@ const FullCart: React.FC<MainTypes> = React.memo(
                   ></path>
                 </svg>
 
-                <span>Вернуться назад</span>
+                <span>Back</span>
               </Link>
               <div className="button pay-btn">
-                <span>Оплатить сейчас</span>
+                <span>Pay now</span>
               </div>
             </div>
           </div>

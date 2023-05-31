@@ -1,10 +1,10 @@
 const categories: [string, string, string, string, string, string] = [
-  "Все",
-  "Мясные",
-  "Вегетарианская",
-  "Гриль",
-  "Острые",
-  "Закрытые",
+  "All",
+  "Meat",
+  "Vegetarian",
+  "Grilled",
+  "Spicy",
+  "Сalzone",
 ];
 
 export default categories;
