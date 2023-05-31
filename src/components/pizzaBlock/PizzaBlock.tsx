@@ -23,7 +23,7 @@ const PizzaBlock: React.FC<PizzaBlocktypes> = ({ isLoading }) => {
           )}
         </ul>
       ) : (
-        <p>По Вашему запросу ничего не найденно</p>
+        <p>Nothing was found</p>
       )}
     </>
   );

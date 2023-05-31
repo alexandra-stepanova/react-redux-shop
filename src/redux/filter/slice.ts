@@ -7,7 +7,7 @@ const initialState: FilterSliceState = {
   currentPage: 1,
   searchValue: "",
   sortType: {
-    name: "популярности",
+    name: "popularity",
     sortProperty: enumSortProperty.RATING_DESC,
   },
 };

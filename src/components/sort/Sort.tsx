@@ -49,7 +49,7 @@ const Sort: React.FC<SortTypes> = React.memo(({ sortType }) => {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>Sort by:</b>
         <span onClick={() => setIsOpenPopup(!isOpenPopup)}>
           {sortType.name}
         </span>

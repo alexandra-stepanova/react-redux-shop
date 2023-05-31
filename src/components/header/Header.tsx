@@ -25,7 +25,7 @@ const Header: React.FC<MainTypes> = React.memo(
             <img width="38" src={pizza} alt="Pizza logo" />
             <div>
               <h1>React Pizza</h1>
-              <p>самая вкусная пицца во вселенной</p>
+              <p>The Best Pizza In Whole UNIVERSE</p>
             </div>
           </div>
           {location === "/" ? (
@@ -33,7 +33,7 @@ const Header: React.FC<MainTypes> = React.memo(
               <Search />
               <div className="header__cart">
                 <Link to="/cart" className="button button--cart">
-                  <span>{totalPrice} Р</span>
+                  <span>{totalPrice} $</span>
                   <div className="button__delimiter"></div>
                   <svg
                     width="18"

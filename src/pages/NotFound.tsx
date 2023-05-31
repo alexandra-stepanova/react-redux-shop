@@ -7,10 +7,10 @@ const NotFound: React.FC = () => {
       <div className="notFound__container">
         <div className="notFound__box">
           <h1 className="notFound__status">404</h1>
-          <p className="notFound__message">Страница была не найденна</p>
+          <p className="notFound__message">The page was not found</p>
         </div>
         <Link to="/" className="notFound__link">
-          Вернуться на главную страницу
+          Back to the main page
         </Link>
       </div>
     </main>

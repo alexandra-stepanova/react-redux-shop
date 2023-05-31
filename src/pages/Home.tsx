@@ -85,11 +85,11 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">All pizzas</h2>
       {status === "error" ? (
         <div>
-          <p>На сервере произошла ошибка. Приносим наши извинения</p>
-          <p>Попробуйте повториь попытку позже.</p>
+          <p>An error has occurred at the server. We are apologies for that.</p>
+          <p>Try again later.</p>
         </div>
       ) : (
         <>
