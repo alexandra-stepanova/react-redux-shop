@@ -3,17 +3,20 @@
   text-align: center;
   margin-bottom: 65px;
 
-  &:not(:nth-of-type(4n)) {
-    margin-right: 35px;
-  }
-
   &__image {
     width: 260px;
   }
 
-  &__title {
+  &__link {
+    text-decoration: none;
+    cursor: pointer;
     font-size: 20px;
     font-weight: 900;
+    color: $orange;
+    
+  }
+
+  &__title {
     letter-spacing: 1%;
     margin-bottom: 20px;
   }
