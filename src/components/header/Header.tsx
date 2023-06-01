@@ -22,7 +22,7 @@ const Header: React.FC<MainTypes> = React.memo(
       <header className="header">
         <div className="container">
           <div className="header__logo">
-            <Link to="/" className="header__img-link">
+            <Link to="react-redux-shop/" className="header__img-link">
             <img width="38" src={pizza} alt="Pizza logo" className="header__img"/>
             </Link>
             <div>
@@ -30,11 +30,11 @@ const Header: React.FC<MainTypes> = React.memo(
               <p>The Best Pizza</p>
             </div>
           </div>
-          {location === "/" ? (
+          {location === "/react-redux-shop/" ? (
             <>
               <Search />
               <div className="header__cart">
-                <Link to="/cart" className="button button--cart">
+                <Link to="/react-redux-shop/cart" className="button button--cart">
                   <span>{totalPrice} $</span>
                   <div className="button__delimiter"></div>
                   <svg

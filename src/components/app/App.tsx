@@ -30,9 +30,9 @@ const App: React.FC = () => {
             />
           }
         >
-          <Route path="" element={<Home />} />
+          <Route path="react-redux-shop/" element={<Home />} />
           <Route
-            path="pizza/:id"
+            path="react-redux-shop/pizza/:id"
             element={
               <Suspense fallback={<div>Loading ...</div>}>
                 <SinglePage />
@@ -40,7 +40,7 @@ const App: React.FC = () => {
             }
           />
           <Route
-            path="cart"
+            path="react-redux-shop/cart"
             element={
               <Suspense fallback={<div>Loading ...</div>}>
                 <Cart
