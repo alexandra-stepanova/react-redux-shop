@@ -110,7 +110,7 @@ const FullCart: React.FC<MainTypes> = React.memo(
             </div>
             <div className="cart__bottom-buttons">
               <Link
-                to="react-redux-shop/"
+                to="/react-redux-shop"
                 className="button button--outline button--add go-back-btn"
               >
                 <svg

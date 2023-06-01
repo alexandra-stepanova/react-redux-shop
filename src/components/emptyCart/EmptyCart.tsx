@@ -16,7 +16,7 @@ const EmptyCard: React.FC = () => {
             To order a pizza, go to the main page.
           </p>
           <img src={emptyCardIcon} alt="Empty cart" />
-          <Link to="react-redux-shop/" className="button button--black">
+          <Link to="/react-redux-shop" className="button button--black">
             <span>Back</span>
           </Link>
         </div>
