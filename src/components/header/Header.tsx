@@ -30,7 +30,7 @@ const Header: React.FC<MainTypes> = React.memo(
               <p>The Best Pizza</p>
             </div>
           </div>
-          {location === "/react-redux-shop/" ? (
+          {location === "/react-redux-shop" ? (
             <>
               <Search />
               <div className="header__cart">
