@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
           <h1 className="notFound__status">404</h1>
           <p className="notFound__message">The page was not found</p>
         </div>
-        <Link to="/" className="notFound__link">
+        <Link to="react-redux-shop/" className="notFound__link">
           Back to the main page
         </Link>
       </div>
