@@ -46,17 +46,6 @@ The React Redux Shop uses SCSS (Sass) for styling. The styles are organized with
 
 The React Redux Shop is deployed using GitHub Actions. The GitHub Actions workflows are located in the .github/workflows/deploy.yml. 
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### Thank you for choosing the React Redux Shop! We hope you enjoy ordering pizza through our online website. If you have any questions or need assistance, please don't hesitate to contact us. Happy pizza shopping! 🍕
 
