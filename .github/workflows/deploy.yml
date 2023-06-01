@@ -22,9 +22,6 @@ jobs:
       - name: Build
         run: npm run build
         
-      - name: Export static files for main site
-        run: npm export
-        
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
