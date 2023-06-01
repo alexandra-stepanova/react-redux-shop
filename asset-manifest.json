@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/react-redux-shop/static/css/main.a06c90cd.css",
-    "main.js": "/react-redux-shop/static/js/main.c0e3189c.js",
-    "static/js/703.0ed9a1e3.chunk.js": "/react-redux-shop/static/js/703.0ed9a1e3.chunk.js",
+    "main.js": "/react-redux-shop/static/js/main.ff594313.js",
+    "static/js/703.1fbaa3fb.chunk.js": "/react-redux-shop/static/js/703.1fbaa3fb.chunk.js",
     "static/js/704.04627052.chunk.js": "/react-redux-shop/static/js/704.04627052.chunk.js",
-    "static/js/949.40bd063f.chunk.js": "/react-redux-shop/static/js/949.40bd063f.chunk.js",
+    "static/js/949.25ac627e.chunk.js": "/react-redux-shop/static/js/949.25ac627e.chunk.js",
     "static/media/Inter-Medium.woff": "/react-redux-shop/static/media/Inter-Medium.eec0ea57721daa33c7a2.woff",
     "static/media/Inter-Black.woff": "/react-redux-shop/static/media/Inter-Black.7bb6234314ccc72c942a.woff",
     "static/media/Inter-Regular.woff": "/react-redux-shop/static/media/Inter-Regular.e148c4a1158f8cee8285.woff",
@@ -14,13 +14,13 @@
     "static/media/logo1.png": "/react-redux-shop/static/media/logo1.6722c8efb2950e0bbfce.png",
     "index.html": "/react-redux-shop/index.html",
     "main.a06c90cd.css.map": "/react-redux-shop/static/css/main.a06c90cd.css.map",
-    "main.c0e3189c.js.map": "/react-redux-shop/static/js/main.c0e3189c.js.map",
-    "703.0ed9a1e3.chunk.js.map": "/react-redux-shop/static/js/703.0ed9a1e3.chunk.js.map",
+    "main.ff594313.js.map": "/react-redux-shop/static/js/main.ff594313.js.map",
+    "703.1fbaa3fb.chunk.js.map": "/react-redux-shop/static/js/703.1fbaa3fb.chunk.js.map",
     "704.04627052.chunk.js.map": "/react-redux-shop/static/js/704.04627052.chunk.js.map",
-    "949.40bd063f.chunk.js.map": "/react-redux-shop/static/js/949.40bd063f.chunk.js.map"
+    "949.25ac627e.chunk.js.map": "/react-redux-shop/static/js/949.25ac627e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a06c90cd.css",
-    "static/js/main.c0e3189c.js"
+    "static/js/main.ff594313.js"
   ]
 }
