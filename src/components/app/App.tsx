@@ -20,7 +20,6 @@ const App: React.FC = () => {
     items.reduce((sum: number, item: any) => sum + item.count, 0);
 
   return (
-    <div className="app">
       <Routes>
         <Route
           element={
@@ -62,7 +61,6 @@ const App: React.FC = () => {
           />
         </Route>
       </Routes>
-    </div>
   );
 };
 

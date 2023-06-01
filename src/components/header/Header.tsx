@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router";
 import Search from "../search/Search";
-import pizza from "../../assets/images/pizza-logo.svg";
+import pizza from "../../assets/images/logo1.png";
 import { MainTypes } from "../layouts/MainLayout";
 
 const Header: React.FC<MainTypes> = React.memo(
@@ -22,10 +22,12 @@ const Header: React.FC<MainTypes> = React.memo(
       <header className="header">
         <div className="container">
           <div className="header__logo">
-            <img width="38" src={pizza} alt="Pizza logo" />
+            <Link to="/" className="header__img-link">
+            <img width="38" src={pizza} alt="Pizza logo" className="header__img"/>
+            </Link>
             <div>
-              <h1>React Pizza</h1>
-              <p>The Best Pizza In Whole UNIVERSE</p>
+              <h1 className="header__title">React Pizza</h1>
+              <p>The Best Pizza</p>
             </div>
           </div>
           {location === "/" ? (
