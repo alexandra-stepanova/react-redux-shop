@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-redux-shop/static/css/main.a06c90cd.css",
-    "main.js": "/react-redux-shop/static/js/main.7b4382b3.js",
-    "static/js/703.e9bdc797.chunk.js": "/react-redux-shop/static/js/703.e9bdc797.chunk.js",
-    "static/js/704.04627052.chunk.js": "/react-redux-shop/static/js/704.04627052.chunk.js",
-    "static/js/949.25ac627e.chunk.js": "/react-redux-shop/static/js/949.25ac627e.chunk.js",
+    "main.css": "/react-redux-shop/static/css/main.dbe43998.css",
+    "main.js": "/react-redux-shop/static/js/main.841cd0c4.js",
+    "static/js/703.530637cd.chunk.js": "/react-redux-shop/static/js/703.530637cd.chunk.js",
+    "static/js/704.a794baa6.chunk.js": "/react-redux-shop/static/js/704.a794baa6.chunk.js",
+    "static/js/949.b1313fed.chunk.js": "/react-redux-shop/static/js/949.b1313fed.chunk.js",
     "static/media/Inter-Medium.woff": "/react-redux-shop/static/media/Inter-Medium.eec0ea57721daa33c7a2.woff",
     "static/media/Inter-Black.woff": "/react-redux-shop/static/media/Inter-Black.7bb6234314ccc72c942a.woff",
     "static/media/Inter-Regular.woff": "/react-redux-shop/static/media/Inter-Regular.e148c4a1158f8cee8285.woff",
@@ -13,14 +13,14 @@
     "static/media/empty-cart.png": "/react-redux-shop/static/media/empty-cart.db905d1f4b063162f25b.png",
     "static/media/logo1.png": "/react-redux-shop/static/media/logo1.6722c8efb2950e0bbfce.png",
     "index.html": "/react-redux-shop/index.html",
-    "main.a06c90cd.css.map": "/react-redux-shop/static/css/main.a06c90cd.css.map",
-    "main.7b4382b3.js.map": "/react-redux-shop/static/js/main.7b4382b3.js.map",
-    "703.e9bdc797.chunk.js.map": "/react-redux-shop/static/js/703.e9bdc797.chunk.js.map",
-    "704.04627052.chunk.js.map": "/react-redux-shop/static/js/704.04627052.chunk.js.map",
-    "949.25ac627e.chunk.js.map": "/react-redux-shop/static/js/949.25ac627e.chunk.js.map"
+    "main.dbe43998.css.map": "/react-redux-shop/static/css/main.dbe43998.css.map",
+    "main.841cd0c4.js.map": "/react-redux-shop/static/js/main.841cd0c4.js.map",
+    "703.530637cd.chunk.js.map": "/react-redux-shop/static/js/703.530637cd.chunk.js.map",
+    "704.a794baa6.chunk.js.map": "/react-redux-shop/static/js/704.a794baa6.chunk.js.map",
+    "949.b1313fed.chunk.js.map": "/react-redux-shop/static/js/949.b1313fed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a06c90cd.css",
-    "static/js/main.7b4382b3.js"
+    "static/css/main.dbe43998.css",
+    "static/js/main.841cd0c4.js"
   ]
 }
