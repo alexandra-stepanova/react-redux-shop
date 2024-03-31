@@ -13,7 +13,7 @@ const SinglePage: React.FC = () => {
     async function getPizza() {
       try {
         const { data } = await axios.get(
-          `https://62c80ec00f32635590d05660.mockapi.io/items/${id}`
+          `https://66093beb0f324a9a2882f528.mockapi.io/Pizzas/${id}`
         );
         setPizza(data);
       } catch (error) {
@@ -22,9 +22,10 @@ const SinglePage: React.FC = () => {
     }
     getPizza();
   }, [id]);
+  console.log(pizza)
   return (
-    <div>
-      <img src={pizza.imageUrl} alt="img" />
+    <div className="singlePage">
+      <img src={pizza.imageUrl} alt="img" className="singlePage__image"/>
       <p>{pizza.name}</p>
     </div>
   );
