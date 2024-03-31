@@ -18,21 +18,21 @@ const Sort: React.FC<SortTypes> = React.memo(({ sortType }) => {
     setIsOpenPopup(false);
   };
 
-  React.useEffect(() => {
-    const handleCloseByOverlay = (event: MouseEvent) => {
-      const _event = event as MouseEvent & {
-        path: Node[];
-      };
-      if (sortRef.current && !_event.path.includes(sortRef.current)) {
-        setIsOpenPopup(false);
-      }
-    };
+  // React.useEffect(() => {
+  //   const handleCloseByOverlay = (event: MouseEvent) => {
+  //     const _event = event as MouseEvent & {
+  //       path: Node[];
+  //     };
+  //     if (sortRef.current && !_event.path.includes(sortRef.current)) {
+  //       setIsOpenPopup(false);
+  //     }
+  //   };
 
-    document.body.addEventListener("click", handleCloseByOverlay);
-    return () => {
-      document.body.removeEventListener("click", handleCloseByOverlay);
-    };
-  }, []);
+  //   document.body.addEventListener("click", handleCloseByOverlay);
+  //   return () => {
+  //     document.body.removeEventListener("click", handleCloseByOverlay);
+  //   };
+  // }, []);
 
   return (
     <div ref={sortRef} className="sort">

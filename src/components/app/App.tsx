@@ -32,7 +32,7 @@ const App: React.FC = () => {
         >
           <Route path="react-redux-shop/" element={<Home />} />
           <Route
-            path="react-redux-shop/pizza/:id"
+            path="/react-redux-shop/pizza/:id"
             element={
               <Suspense fallback={<div>Loading ...</div>}>
                 <SinglePage />
