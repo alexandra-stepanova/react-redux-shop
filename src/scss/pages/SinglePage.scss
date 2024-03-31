@@ -1,0 +1,13 @@
+.singlePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+
+  &__image {
+    width: 400px;
+    height: 500px;
+    border-radius: 16px;
+  }
+}
